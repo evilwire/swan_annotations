@@ -1,0 +1,116 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%Diagram package
+\usepackage[dvips,midshaft,nohug,silent,heads=vee]{diagrams}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathmorphing}
+
+\newcounter{items}[section]
+\setcounter{items}{1}
+
+%Taylor diagram arrows
+\newarrow{Mapsto}{mapsto}--->
+\newarrow{Equals}=====
+\newarrow{Dashto}{}{dash}{}{dash}>
+
+% The following causes equations to be numbered within sections
+\numberwithin{equation}{section}
+\theoremstyle{plain} %% This is the default, anyway
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{rmk}[equation]{Remark}
+\newtheorem{ex}[equation]{Example}
+
+\newcommand{\Cat}[1]{\mathcal{#1}}
+
+\newcommand{\im}{\mathrm{im}}
+
+\renewcommand{\to}{\longrightarrow}
+\begin{document}
+\section{Category Theory}
+
+\begin{definition} 
+Let $\Cat{A}$ be an abelian category. A subcategory
+$\Cat{C}$ is a \emph{Serre subcategory of $\Cat{A}$}
+if
+\begin{enumerate}
+\item $\Cat{C}$ is a full subcategory of $\Cat{A}$
+
+\item If $0 \to A' \to A \to A''\to 0$ is exact in $\Cat{A}$
+then $A \in \Cat{C}$ if and only if $A'$ and $A''$ are in
+$\Cat{C}$
+
+\item $\Cat{C}$ is nonempty.
+\end{enumerate}
+\end{definition}
+
+Example 3 is of great interest to us: Let $T$ be an exact
+functor from $\Cat{A}$ to $\Cat{B}$, both abelian categories.
+Let $\Cat{C}$ be the full subcategory of $\Cat{A}$ with objects
+equal to $\{A | T(A) = 0\}$. Then $\Cat{C}$ is a Serre 
+subcategory.
+
+The proof here is obvious: $0 \in \Cat{C}$, which is by 
+definition full. Given
+\[
+0 \to A' \to A \to A'' \to 0
+\]
+of objects in $\Cat{A}$. Then, the following is exact:
+\[
+0 \to T(A') \to T(A) \to T(A'') \to 0.
+\]
+It is clear that $A \in \Cat{C}$ if and only if $A'$ and
+$A''$ are members of $\Cat{C}$.
+
+\begin{definition}
+A category $\Cat{A}$ is \emph{well-powered} if the poset
+of ``subobjects'' of any object $A \in \Cat{A}$ is small.
+Here, ``subobject'' refers to an equivalence class of
+monomorphisms.
+\end{definition}
+
+The comment ``Serre has given...'' refers to Theorem 2.1 on
+page 44, where the category $\Cat{A}/\Cat{C}$ is constructed
+for every abelian category $\Cat{A}$ and Serre subcategory
+$\Cat{C}$.
+
+\begin{prop}
+A nonempty full subcategory $\Cat{C}$ of an abelian category
+$\Cat{A}$ is a Serre subcategory if and only if for every
+exact sequence
+\[
+A' \stackrel{f}{\to} A \stackrel{g}{\to} A''
+\]
+in $\Cat{A}$ with $A'$ and $A''$ in $\Cat{C}$ implies
+$A \in \Cat{C}$.
+\end{prop}
+\begin{proof}
+\noindent$\Leftarrow$: Show that $0 \in \Cat{C}$, and then show
+use $0 \to A' \to A$ and $A \to A'' \to 0$ to show that $A'$
+and $A''$ are in $\Cat{C}$
+
+\noindent$\Rightarrow$: For
+\[
+A' \stackrel{f}{\to} A \stackrel{g}{\to} A''
+\]
+show that $\im f = \ker g$ and $\im g$ are all
+objects of $\Cat{C}$ and use
+\[
+0 \to \ker g \to A \to im g \to 0.
+\]
+\end{proof}
+\end{document}
+
