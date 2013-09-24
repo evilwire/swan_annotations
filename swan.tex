@@ -39,6 +39,10 @@
 \newcommand{\im}{\mathrm{im}}
 
 \renewcommand{\to}{\longrightarrow}
+\newcommand{\id}{\mathrm{id}}
+
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\cok}{\mathrm{cok}}
 \begin{document}
 \section{Category Theory}
 
@@ -111,6 +115,76 @@ objects of $\Cat{C}$ and use
 \[
 0 \to \ker g \to A \to im g \to 0.
 \]
+\end{proof}
+
+\begin{definition}
+Let $\Cat{C}$ be a Serre subcategory of $\Cat{A}$ and let
+$f : A \to B$ in $\Cat{A}$. Then
+\begin{itemize}
+\item $f$ is a \emph{$\Cat{C}$-mono} if $\ker f \in \Cat{C}$
+\item $f$ is a \emph{$\Cat{C}$-epi} if $\cok f \in \Cat{C}$
+\item $f$ is a \emph{$\Cat{C}$-iso} if $f$ is both a mono and
+      an epi
+\end{itemize}
+\end{definition}
+
+\begin{lem}
+Let $A \stackrel{f}{\to} B \stackrel{g}{\to} C$ be an exact
+sequence in $\Cat{A}$. 
+\begin{enumerate}
+\item If $f$ and $g$ are $\Cat{C}$-*, then so is $gf$.
+
+\item If $gf$ is $\Cat{C}$-mono, then $f$ is $\Cat{C}$-mono.
+
+\item If $f$ is $\Cat{C}$-iso, then $g$ is a $\Cat{C}$-* if
+      and only if $gf$ is.
+
+\item If $g$ is $\Cat{C}$-iso, then $f$ is a $\Cat{C}$-* if
+      and only if $gf$ is.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+The proof uses the 3-Lemma; stated simply: if 
+$A \stackrel{f}{\to} B \stackrel{g}{\to} C$
+is exact, then so is
+\[
+0 \to \ker f \to \ker gf \to \ker g \to \cok f \to \cok gf \to
+\cok g \to 0,
+\]
+from which the lemma follows from Prop 1.1.
+
+To see this, apply the Snake Lemma to
+\[
+\begin{diagram}
+0 &\rTo &A &\rTo{\id \oplus f} &A \oplus B &\rTo{f - \id} &B &\rTo &0 \\
+  &   &\dTo{f} &   &\dTo{gf \oplus id} &          &\dTo{g}  &   & \\
+0 &\rTo &B &\rTo{g\oplus \id} &C \oplus B &\rTo{\id - g} &C &\rTo &0 
+\end{diagram}
+\]
+\end{proof}
+
+\begin{definition}
+Let $\Cat{A}$ be an abelian category, $\Cat{C}$ a Serre subcategory,
+and $L \in \Cat{A}$ is \emph{$\Cat{C}$-closed} if for $\Cat{C}$-iso 
+$u: A \to B$,
+\[
+\hom(B, L) \to \hom(A, L) 
+\]
+is an isomorphism.
+\end{definition}
+
+\begin{lem}
+$L$ is $\Cat{C}$-closed if and only if
+\begin{enumerate}
+\item $L$ has no $\Cat{C}$ subobject. That is, $C \in \Cat{C}$ 
+      implies $\hom(C, L) = 0$, and
+
+\item If $0 \to L \to X \to C \to 0$ is exact, and $C \in \Cat{C}$
+      then the sequence splits.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+\noindent $\Rightarrow$:
 \end{proof}
 \end{document}
 
