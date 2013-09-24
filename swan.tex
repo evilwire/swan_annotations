@@ -196,7 +196,7 @@ kernel is in $\Cat{C}$; use (1).
 
 The case where $f$ is mono, conclude $f$ induces injection on homs 
 via same reasoning as epi; consider push-out $P$ of $g: A \to L$ and
-$f: A \to B$, and complete the square into commuting s.e.s's:
+$f: A \to B$, and complete the square into map between s.e.s's:
 \[
 \begin{diagram}
 0 & \rTo &   A     &\rTo{f}  & B                &  \rTo     & C       &\rTo & 0 \\
@@ -204,9 +204,11 @@ $f: A \to B$, and complete the square into commuting s.e.s's:
 0 & \rTo &   L     &\rTo{f'} & P                &  \rTo     & C'      &\rTo & 0.
 \end{diagram}
 \]
-Via universal property of $P$, via $B \to C$ and $L \stackrel{0}{\to} 
-C$, lift $C'$ to $C$ and show that $C \simeq C'$, so $C' \in \Cat{C}$.
-Finish by splitting the bottom s.e.s. using (2).
+Using the universal property of $P$, via $B \to C$ and $L 
+\stackrel{0}{\to} C$, we get $P \to C$; $C' \to C$ comes
+from the universal property of cokernels. Show that $C \simeq 
+C'$, so $C' \in \Cat{C}$. Finish by splitting the bottom s.e.s. 
+using (2).
 \end{proof}
 
 \begin{definition}
@@ -219,5 +221,21 @@ A Serre subcategory $\Cat{C}$ of $\Cat{A}$ is a \emph{localizing
 subcategory} if every object in $\Cat{A}$ has a $\Cat{C}$-envelop.
 \end{definition}
 
+\begin{rmk}
+It is worth mentioning that Gabriel defined localizing by 
+considering $T: \Cat{A} \to \Cat{A}/\Cat{C}$: $\Cat{C}$ is 
+localizing if and only if $T$ admits a left adjoint.
+\end{rmk}
+
+\begin{thm}
+Let $\Cat{C}$ be a localizing subcategory of $\Cat{A}$. Let
+$\Cat{L}$ be the full subcategory of all $\Cat{C}$-closed objects.
+Then
+\begin{enumerate}
+\item $\Cat{L}$ is reflexive. That is, the inclusion $i: \Cat{L}
+\to \Cat{A}$ has a left adjoint $R: \Cat{A} \to \Cat{L}$.
+
+\end{enumerate}
+\end{thm}
 \end{document}
 
