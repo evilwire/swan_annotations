@@ -184,7 +184,40 @@ $L$ is $\Cat{C}$-closed if and only if
 \end{enumerate}
 \end{lem}
 \begin{proof}
-\noindent $\Rightarrow$:
+\noindent $\Rightarrow$: Use the $\Cat{C}$-iso $C \to 0$, and
+note that the map $L \to X$ in (2) is a $\Cat{C}$-iso.
+
+\noindent $\Leftarrow$: Consider $f: A \to B$, and reduce to the
+case where $f$ is either an mono or an epi by considering $\ker f$, 
+$\im f$ and $\cok f$. 
+
+The case where $f$ is epi, complete to a s.e.s, and note that the
+kernel is in $\Cat{C}$; use (1).
+
+The case where $f$ is mono, conclude $f$ induces injection on homs 
+via same reasoning as epi; consider push-out $P$ of $g: A \to L$ and
+$f: A \to B$, and complete the square into commuting s.e.s's:
+\[
+\begin{diagram}
+0 & \rTo &   A     &\rTo{f}  & B                &  \rTo     & C       &\rTo & 0 \\
+  &      &\dTo{g}  &        &\dTo{g'}          &          &\dTo{g}  &    & \\
+0 & \rTo &   L     &\rTo{f'} & P                &  \rTo     & C'      &\rTo & 0.
+\end{diagram}
+\]
+Via universal property of $P$, via $B \to C$ and $L \stackrel{0}{\to} 
+C$, lift $C'$ to $C$ and show that $C \simeq C'$, so $C' \in \Cat{C}$.
+Finish by splitting the bottom s.e.s. using (2).
 \end{proof}
+
+\begin{definition}
+$u : A \to L$ is called a \emph{$\Cat{C}$-envelop of $A$} if $u$ is a
+$\Cat{C}$-iso and $L$ is $\Cat{C}$-closed.
+\end{definition}
+
+\begin{definition}
+A Serre subcategory $\Cat{C}$ of $\Cat{A}$ is a \emph{localizing 
+subcategory} if every object in $\Cat{A}$ has a $\Cat{C}$-envelop.
+\end{definition}
+
 \end{document}
 
