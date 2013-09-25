@@ -67,7 +67,7 @@ A' \stackrel{f}{\to} A \stackrel{g}{\to} A''
 show that $\im f = \ker g$ and $\im g$ are all
 objects of $\Cat{C}$ and use
 \[
-0 \to \ker g \to A \to im g \to 0.
+0 \to \ker g \to A \to \im g \to 0.
 \]
 \end{proof}
 
@@ -213,8 +213,12 @@ RA     &\rTo{Rf} & RA'
 \end{diagram}
 \]
 Check that $R$ is a functor; left-adjointness follows from the
-fact that $\hom_{\Cat{L}}(RA, L) = \hom_{\Cat{C}}(RA, L) =
-\hom_{\Cat{C}}(A, L)$ for any $L \in \Cat{L}$.
+fact that 
+\[
+\hom_{\Cat{L}}(RA, L) = \hom_{\Cat{C}}(RA, L) =
+\hom_{\Cat{C}}(A, L)
+\]
+for any $L \in \Cat{L}$.
 
 To show that $R(gf) = RgRf$, consider
 \[
@@ -334,4 +338,47 @@ For kernels, consider $K = \ker (A \to A)$, and by \ref{thm_lemma}
 \]
 and we have that $i$ preserves kernels, so $R$ must, too. This
 concludes the proof of the Theorem.
+\end{proof}
+
+For the following, let $\Cat{M}$ be the full subcategory of
+objects that has no subobject other than 0 in $\Cat{C}$.
+
+\begin{lem}
+If $0 \to A \stackrel{f}{\to} L \stackrel{g}{\to} B \to 0$ is 
+exact in $\Cat{A}$ and $L \in \Cat{L}$ then $A \in \Cat{L}$ if 
+and only if $B \in \Cat{M}$.
+\end{lem}
+\begin{proof}
+\noindent $\Rightarrow$: $A \in \Cat{M}$ since $L$ is 
+$\Cat{C}$-closed. By Lemma \ref{C_close_eq_cond}, it suffices
+to show that any s.e.s.
+\[
+0 \to A \stackrel{f}{\to} X \stackrel{g}{\to} C \to 0
+\]
+with $C \in \Cat{C}$ splits. For this, notice that $f$ is
+a $\Cat{C}$-iso, and therefore, we have the following
+\[
+\begin{diagram}
+0 &\rTo & A        & \rTo{f}  & X       & \rTo{g}  & C       & \rTo & 0\\ 
+  &     & \dEquals &          & \dTo{h} &          & \dTo{j} \\
+0 &\rTo & A        & \rTo{f'} & L       & \rTo{g'} & B       & \rTo & 0
+\end{diagram}
+\]
+from $\hom(X, L) \simeq \hom(A, L)$, and $j$ from the universality 
+of cokers. Since $B \in \Cat{M}$, $j = 0$, and $h$ factors through
+$f$ via, say $h'$. Then $h'$ is the desired splitting.
+
+\noindent $\Leftarrow$: Assume there exists an injection $C 
+\stackrel{j}{\to} B$, and take pull-back $P$ of $L \to B$. 
+Complete the pull-back square into the diagram:
+\[
+\begin{diagram}
+0 &\rTo & A        & \rTo{f'} & L       & \rTo{g'} & B       & \rTo & 0\\ 
+  &     & \dEquals &          & \uTo{h} &          & \uTo{j} \\
+0 &\rTo & A        & \rTo     & P       & \rTo     & C       & \rTo & 0
+\end{diagram}
+\]
+Since $h$ is an injection, since it is a pull-back of an injection,
+and since $A \in \Cat{L}$, the bottom s.e.s. splits; taking the 
+composition: $C \to P \stackrel{h}{\to} L$, we see that $C = 0$.
 \end{proof}
