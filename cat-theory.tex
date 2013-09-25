@@ -21,8 +21,8 @@ Let $\Cat{C}$ be the full subcategory of $\Cat{A}$ with objects
 equal to $\{A | T(A) = 0\}$. Then $\Cat{C}$ is a Serre 
 subcategory.
 
-The proof here is obvious: $0 \in \Cat{C}$, which is by 
-definition full. Given
+The proof: $\Cat{C}$ is by definition full, and non-empty
+since $0 \in \Cat{C}$. Given
 \[
 0 \to A' \to A \to A'' \to 0
 \]
@@ -194,7 +194,7 @@ of $\Cat{A}$).
 
 \item $R$ is an exact functor from $\Cat{A}$ to $\Cat{A}$.
 
-\item If $\Cat{A}$ is left (resp. right) complete, then so is
+\item If $\Cat{A}$ is complete/cocomplete, then so is
 $\Cat{L}$.
 \end{enumerate}
 \end{thm}
@@ -228,36 +228,110 @@ and use the fact that $RgRf$ is the unique map
 from $RA$ to $RA''$ that makes the outer square
 commute.
 
-Note, $R$ is additive.
+This proves (1) of the Theorem.
+
+Similarly, $R0 = 0$. (Contrary to the claim in Swan,
+$R$ is not yet known to be additive, since $\Cat{L}$
+is not yet known to be additive.)
 
 To continue:
 
-\begin{lem}
+\begin{lem}\label{thm_lemma}
 Let $i$ denote inclusion of $\Cat{L}$ into $\Cat{A}$. The
 functor $iR: \Cat{A} \to \Cat{A}$ is left exact.
 \end{lem}
 
 \begin{proof}
-Let $0 \to A \stackrel{i}{\to} A' \stackrel{j}{\to} A'' \to 
-0$ be an exact sequence, and consider
+Let $0 \to A \stackrel{f}{\to} A' \stackrel{g}{\to} A'' \to 
+0$ be an exact sequence, and we have 
 \[
 \begin{diagram}
-0 & \rTo &   A'     &\rTo{i}  & A           &  \rTo     & A''       &\rTo & 0 \\
-  &      &\dTo{u'}  &        &\dTo(4,0){u}  &          &\dTo(4,0){u''} \\ 
+0 & \rTo &   A'     &\rTo{f}  & A           &  \rTo{g}     & A''       &\rTo & 0 \\
+  &      &\dTo{u'}  &        &\dTo(4,0){u}  &              &\dTo(4,0){u''} \\ 
   &       &   RA'     \\
-  &       &\dTo{g}   & \rdTo{Ri} \\
-0 & \rTo  & \ker Rj  & \rTo   & RA          & \rTo{Rj} & RA''       & \rTo & 0
+  &       &\dTo{h}   & \rdTo{Rf} \\
+0 & \rTo  & \ker Rj  & \rTo   & RA          & \rTo{Rg} & RA''
 \end{diagram}
 \]
-Applying Snake Lemma, conclude that $\ker gu', \cok gu' \in \Cat{C}$. 
-Use Lemma \ref{C_map_comp}, conclude that $g$ is a $\Cat{C}$-iso.
+Applying Snake Lemma, conclude that $\ker hu', \cok hu' \in \Cat{C}$. 
+Use Lemma \ref{C_map_comp}, conclude that $h$ is a $\Cat{C}$-iso.
 Using Lemma \ref{C_close_eq_cond} on the sequence
 \[
-0 \to K \to RA' \to \ker Rj \to D \to 0
+0 \to K \to RA' \to \ker Rg \to D \to 0
 \]
-to show that $K = 0$ and $D \to \ker Rj \to RA$ is an injection
+to show that $K = 0$ and $D \to \ker Rg \to RA$ is an injection
 (since the s.e.s. splits). But $RA$ is $\Cat{C}$-closed, which
 implies that $D = 0$.
 \end{proof}
-\end{proof}
 
+Showing that $\Cat{L}$ is closed under finite products (and 
+arbitrary products if they exist in $\Cat{A}$): fix $A \to B$
+a $\Cat{C}$-iso, and let $L = \prod L_\alpha$ (as an object of 
+$\Cat{A}$), then we have
+\[
+\begin{diagram}
+\hom(A, L)  &\lTo  & \hom(B, L) \\ 
+\dEquals  &        &\dEquals \\
+\prod \hom(A, L_\alpha)     &\lTo & \prod \hom(B, L_\alpha).
+\end{diagram}
+\]
+with the bottom map an iso for every $\alpha$.
+
+For kernels in $\Cat{L}$, consider $\Cat{C}$-iso $A \to B$,
+and fix $X$ to be the kernel of $L \to L'$, then
+\[
+\begin{diagram}
+0 & \hom(A, X)  & \lTo  & \hom(A, L) & \lTo & \hom(A, L') \\ 
+  &  \uTo       &       & \uTo       &      & \uTo        \\
+0 & \hom(B, X)  & \lTo  & \hom(B, L) & \lTo & \hom(B, L')
+\end{diagram}
+\]
+and use the 5-lemma.
+
+Hence, $\Cat{L}$ is closed under $\colim$ if $\Cat{A}$ is
+complete.
+
+For sums and cokernels, use the following facts:
+\begin{enumerate}
+\item $R$ preserves $\dlim$ since $R$ is a left adjoint.
+
+\item finite sums exist in $\Cat{L}$ since they are also finite
+products.
+
+\item $Ri$ is naturally iso to the identity functor on $\Cat{L}$:
+to see this, fix $L \in \Cat{L}$ and consider
+\[
+\begin{diagram}
+L        & \rEquals &L \\
+\dTo{u}  &          &\dEquals \\
+RL       & \rTo     &L
+\end{diagram}
+\]
+and naturality follows. 
+
+\item $\Cat{A}$ is abelian, and is itself closed under
+finite $\dlim$.
+
+\item $\Cat{L}$ thus has a zero object, which is the
+same as the zero object of $\Cat{A}$ (since $0 \in \Cat{L}$).
+\end{enumerate}
+
+From 1, 2, and 3, it is clear that if $\Cat{A}$ is cocomplete,
+then so is $\Cat{L}$. This shows (4) in the Theorem.
+
+From 1 - 4, it is clear that $\Cat{L}$ is also closed under
+$\dlim$, whence $\Cat{L}$ is additive and closed under direct 
+sums, kernels and cokernels.
+
+To finish (show that $\Cat{L}$ is abelian, and $R$ is exact)
+we need only to show that $R$ preserves kernels and cokernels;
+whence $R$ preserves images and coimages.
+
+That $R$ preserves cokers is clear, since $R$ is a left-adjoint.
+For kernels, consider $K = \ker (A \to A)$, and by \ref{thm_lemma}
+\[
+0 \to iRK \to iRA \to iRA'
+\]
+and we have that $i$ preserves kernels, so $R$ must, too. This
+concludes the proof of the Theorem.
+\end{proof}
