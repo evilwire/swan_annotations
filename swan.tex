@@ -6,7 +6,7 @@
 \usepackage{amssymb}
 
 %Diagram package
-\usepackage[dvips,midshaft,nohug,silent,heads=vee]{diagrams}
+\usepackage[dvips,midshaft,nohug,silent,heads=LaTeX]{diagrams}
 
 \usepackage{tikz}
 \usetikzlibrary{matrix}
@@ -42,10 +42,10 @@
 \newcommand{\id}{\mathrm{id}}
 
 \renewcommand{\hom}{\mathrm{Hom}}
-\newcommand{\cok}{\mathrm{cok}}
+\newcommand{\cok}{\mathrm{cok}\,}
+\renewcommand{\ker}{\mathrm{ker}\,}
 \begin{document}
 
 \include{cat-theory}
-
 \end{document}
 

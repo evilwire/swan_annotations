@@ -82,7 +82,7 @@ $f : A \to B$ in $\Cat{A}$. Then
 \end{itemize}
 \end{definition}
 
-\begin{lem}
+\begin{lem}\label{C_map_comp}
 Let $A \stackrel{f}{\to} B \stackrel{g}{\to} C$ be an exact
 sequence in $\Cat{A}$. 
 \begin{enumerate}
@@ -127,7 +127,7 @@ $u: A \to B$,
 is an isomorphism.
 \end{definition}
 
-\begin{lem}
+\begin{lem}\label{C_close_eq_cond}
 $L$ is $\Cat{C}$-closed if and only if
 \begin{enumerate}
 \item $L$ has no $\Cat{C}$ subobject. That is, $C \in \Cat{C}$ 
@@ -196,6 +196,68 @@ of $\Cat{A}$).
 
 \item If $\Cat{A}$ is left (resp. right) complete, then so is
 $\Cat{L}$.
-
 \end{enumerate}
 \end{thm}
+
+\begin{proof}
+For $A \in \Cat{A}$, set $RA$ to be any $\Cat{C}$-envelop
+of $A$. Since $A \stackrel{u}{\to} RA$ is a $\Cat{C}$-iso, then,
+for $A \to A'$, since $RA'$ is $\Cat{C}$-closed, $u$ induces a
+bijection $\hom(A, RA') \simeq \hom(RA, RA')$ (via composition) 
+and let $Rf$ be the unique map making
+\[
+\begin{diagram}
+ A     &\rTo{f}  & A'\\
+\dTo{u}  &        &\dTo{u'}\\
+RA     &\rTo{Rf} & RA'
+\end{diagram}
+\]
+Check that $R$ is a functor; left-adjointness follows from the
+fact that $\hom_{\Cat{L}}(RA, L) = \hom_{\Cat{C}}(RA, L) =
+\hom_{\Cat{C}}(A, L)$ for any $L \in \Cat{L}$.
+
+To show that $R(gf) = RgRf$, consider
+\[
+\begin{diagram}
+ A     &\rTo{f}  & A' & \rTo{g} & A'' \\
+\dTo{u}  &        &\dTo{u'} &    &\dTo{u''} \\
+RA     &\rTo{Rf} & RA' & \rTo{Rg} & RA''
+\end{diagram}
+\]
+and use the fact that $RgRf$ is the unique map
+from $RA$ to $RA''$ that makes the outer square
+commute.
+
+Note, $R$ is additive.
+
+To continue:
+
+\begin{lem}
+Let $i$ denote inclusion of $\Cat{L}$ into $\Cat{A}$. The
+functor $iR: \Cat{A} \to \Cat{A}$ is left exact.
+\end{lem}
+
+\begin{proof}
+Let $0 \to A \stackrel{i}{\to} A' \stackrel{j}{\to} A'' \to 
+0$ be an exact sequence, and consider
+\[
+\begin{diagram}
+0 & \rTo &   A'     &\rTo{i}  & A           &  \rTo     & A''       &\rTo & 0 \\
+  &      &\dTo{u'}  &        &\dTo(4,0){u}  &          &\dTo(4,0){u''} \\ 
+  &       &   RA'     \\
+  &       &\dTo{g}   & \rdTo{Ri} \\
+0 & \rTo  & \ker Rj  & \rTo   & RA          & \rTo{Rj} & RA''       & \rTo & 0
+\end{diagram}
+\]
+Applying Snake Lemma, conclude that $\ker gu', \cok gu' \in \Cat{C}$. 
+Use Lemma \ref{C_map_comp}, conclude that $g$ is a $\Cat{C}$-iso.
+Using Lemma \ref{C_close_eq_cond} on the sequence
+\[
+0 \to K \to RA' \to \ker Rj \to D \to 0
+\]
+to show that $K = 0$ and $D \to \ker Rj \to RA$ is an injection
+(since the s.e.s. splits). But $RA$ is $\Cat{C}$-closed, which
+implies that $D = 0$.
+\end{proof}
+\end{proof}
+
