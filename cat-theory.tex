@@ -343,7 +343,7 @@ concludes the proof of the Theorem.
 For the following, let $\Cat{M}$ be the full subcategory of
 objects that has no subobject other than 0 in $\Cat{C}$.
 
-\begin{lem}
+\begin{lem}\label{lemma_1_6}
 If $0 \to A \stackrel{f}{\to} L \stackrel{g}{\to} B \to 0$ is 
 exact in $\Cat{A}$ and $L \in \Cat{L}$ then $A \in \Cat{L}$ if 
 and only if $B \in \Cat{M}$.
@@ -370,7 +370,7 @@ $f$ via, say $h'$. Then $h'$ is the desired splitting.
 
 \noindent $\Leftarrow$: Assume there exists an injection $C 
 \stackrel{j}{\to} B$, and take pull-back $P$ of $L \to B$. 
-Complete the pull-back square into the diagram:
+Complete the pullback square into the diagram:
 \[
 \begin{diagram}
 0 &\rTo & A        & \rTo{f'} & L       & \rTo{g'} & B       & \rTo & 0\\ 
@@ -406,5 +406,81 @@ $f$. It is the second sense that we will use to proceed.
 \begin{proof}
 \noindent (1) $\Rightarrow$ (2): is clear.
 
-\noindent (2) $\Rightarrow$ (3):
+\noindent (2) $\Rightarrow$ (3): Fix $A \stackrel{u}{\to} L$
+and the kernel $C$, which is an object of $\Cat{C}$, is the
+largest; indeed, any $D \to A \to L$ must be 0. Thus, any
+$D \to A$ factors through $C$.
+
+\noindent (3) $\Rightarrow$ (2): Let $C$ be the largest 
+subobject of $A$ in $\Cat{C}$, and let $B$ be the coker. 
+We show $B \in \Cat{M}$: assume a mono $D \to B$, where $D \in 
+\Cat{C}$, and complete into the following by taking a pullback 
+$P$ along $B$:
+\[
+\begin{diagram}
+0 &\rTo & C        & \rTo     & P    & \rTo{j'} & D       & \rTo & 0\\ 
+  &     & \dEquals & \ldTo{f} & \dTo &          & \dTo    \\
+0 &\rTo & C        & \rTo{h}  & A    & \rTo{j}  & B       & \rTo & 0
+\end{diagram}
+\]
+That $j'$ is epi follows from $j$ epi. $C \to P$ follows from the 
+universality of pullbacks (via $C \stackrel{0}{\to} D$) and $D 
+\to B$ is injective implies that the top sequence is exact, and
+since $C, D \in \Cat{C}$ implies that $P \in \Cat{C}$; $C$ largest
+implies $P \to A$ factors through $C$, and thus, $P \to D \to B$
+is 0, and thus $D = 0$. This shows that $B \in \Cat{M}$.
+
+$B \in \Cat{M}$ implies (via 3) that we can construct a 
+$\Cat{C}$-mono $B \to L$ to some $L$ $\Cat{C}$-closed, and
+the composition $A \to B \to L$ is the desired $\Cat{C}$-mono.
+
+\noindent (3) $\Rightarrow$ (1): Suppose $A$ has largest
+$\Cat{C}$ subobject, then by the same reasoning as above,
+we have
+\[
+0 \to C \to A \to B \to 0
+\]
+with $B \in \Cat{M}$, and if we assume that $B$ has a
+$\Cat{C}$-envelop $L$, then, composing $A \to B \to L$
+is also a $\Cat{C}$-iso: $B \to L$ is a $\Cat{C}$-iso
+and $B \in \Cat{M}$ then $B \to L$ is injective; $A \to
+B$ surjective implies that
+\[
+0 \to C \to A \to L \to C' \to 0
+\]
+exact for some $C' \in \Cat{C}$. Therefore, it suffice
+to prove that any $A \in \Cat{M}$ has a $\Cat{C}$-envelop.
+
+Via (3), set $A \to L$ a $\Cat{C}$-mono, $L$ is 
+$\Cat{C}$-closed. Complete to a s.e.s (with cok $Q$).
+Take largest $\Cat{C}$-subobject $C$ of $Q$, and pullback
+$P$ along $Q$:
+\begin{equation}\label{pull_back_of_subobj}
+\begin{diagram}
+0 &\rTo & A        & \rTo{f'} & L       & \rTo{g'} & Q       & \rTo & 0\\ 
+  &     & \dEquals &          & \uTo{f} &          & \uTo{j} \\
+0 &\rTo & A        & \rTo     & P       & \rTo     & C       & \rTo & 0
+\end{diagram}
+\end{equation}
+and proceed by proving that $P$ is $\Cat{C}$-closed by considering
+the diagram:
+\[
+\begin{diagram}
+0 &\rTo & P        & \rTo{f} & L       & \rTo & \cok f  & \rTo & 0\\ 
+  &     & \dTo     &         & \dTo{f} &      & \dTo{j} \\
+0 &\rTo & C        & \rTo{j} & Q       & \rTo & \cok j  & \rTo & 0
+\end{diagram}
+\]
+Here, $f$ is mono because it is pullback of a mono; apply Snake to
+(\ref{pull_back_of_subobj}) to conclude that $\cok j \simeq \cok f$.
+But $\cok j \in \Cat{M}$ (see (3) $\Rightarrow$ (2)), and so is
+$\cok f$; by Lemma \ref{lemma_1_6}, $P$ is $\Cat{C}$-closed.
+\end{proof}
+
+\begin{cor}
+If $\Cat{A}$ has enough injectives, then $\Cat{C}$ is localizing if
+and only if every $A \in \Cat{C}$ has a largest subobject.
+\end{cor}
+\begin{proof}
+
 \end{proof}
