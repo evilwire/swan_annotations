@@ -519,9 +519,26 @@ subobject. Any nonzero $\Cat{C}$ subobject of $L'$ pulls back
 nontrivially to $L$, a contradiction.
 \end{proof}
 
+\begin{definition}
+A category $\Cat{A}$ is \emph{well-powered} if for each $A \in
+\Cat{A}$, the class of subobjects of $A$ is a set.
+\end{definition}
+
 \begin{cor}
 If $\Cat{A}$ has injective envelopes, is right complete, and
 well-powered, then $\Cat{C}$ is localizing if and only if $\Cat{C}$
 is closed under direct sums (equiv. $\Cat{C}$ is complete)
 \end{cor}
+\begin{proof}
+\noindent $\Leftarrow$: sum over the set of $\Cat{C}$ subobjects
+of $A$. This is an object of $\Cat{C}$, whose image in $A$ must
+also be in $\Cat{C}$, since $\Cat{C}$ is a Serre subcategory. This
+is the largest subobject.
+
+\noindent $\Rightarrow$: $C \in \Cat{C}$ if and only if $C \to 0$
+is a $\Cat{C}$-envelope if and only if $RC = 0$.
+
+But $R\sum_{\alpha} C_\alpha = \sum_{\alpha} RC_\alpha$ (since $R$
+is left adjoint.
+\end{proof}
 
