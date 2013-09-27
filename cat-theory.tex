@@ -127,7 +127,7 @@ $u: A \to B$,
 is an isomorphism.
 \end{definition}
 
-\begin{lem}\label{C_close_eq_cond}
+\begin{lem}\label{lemma_1_3}%\label{C_close_eq_cond}
 $L$ is $\Cat{C}$-closed if and only if
 \begin{enumerate}
 \item $L$ has no $\Cat{C}$ subobject. That is, $C \in \Cat{C}$ 
@@ -259,7 +259,7 @@ Let $0 \to A \stackrel{f}{\to} A' \stackrel{g}{\to} A'' \to
 \]
 Applying Snake Lemma, conclude that $\ker hu', \cok hu' \in \Cat{C}$. 
 Use Lemma \ref{C_map_comp}, conclude that $h$ is a $\Cat{C}$-iso.
-Using Lemma \ref{C_close_eq_cond} on the sequence
+Using Lemma \ref{lemma_1_3} on the sequence
 \[
 0 \to K \to RA' \to \ker Rg \to D \to 0
 \]
@@ -350,7 +350,7 @@ and only if $B \in \Cat{M}$.
 \end{lem}
 \begin{proof}
 \noindent $\Rightarrow$: $A \in \Cat{M}$ since $L$ is 
-$\Cat{C}$-closed. By Lemma \ref{C_close_eq_cond}, it suffices
+$\Cat{C}$-closed. By Lemma \ref{lemma_1_3} it suffices
 to show that any s.e.s.
 \[
 0 \to A \stackrel{f}{\to} X \stackrel{g}{\to} C \to 0
@@ -383,7 +383,7 @@ and since $A \in \Cat{L}$, the bottom s.e.s. splits; taking the
 composition: $C \to P \stackrel{h}{\to} L$, we see that $C = 0$.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop_1_7}
 Let $\Cat{C}$ be a Serre subcategory of an abelian category 
 $\Cat{A}$. Then the following are equivalent:
 \begin{enumerate}
@@ -477,10 +477,51 @@ But $\cok j \in \Cat{M}$ (see (3) $\Rightarrow$ (2)), and so is
 $\cok f$; by Lemma \ref{lemma_1_6}, $P$ is $\Cat{C}$-closed.
 \end{proof}
 
+\begin{definition}
+Fix $\Cat{A}$ an abelian category, and $M \in \Cat{A}$.
+
+An \emph{essential extension} (of $M$ by $E$) is a mono $u: M \to 
+E$ such that for every non-zero subobject $N \to E$, the fibre 
+product $M \times_E M$ is not $0$.
+
+If $E$ is injective, then we say that $E$ is an \emph{injective 
+hull} (or an \emph{injective envelope}) of $M$.
+\end{definition}
+
+\begin{rmk}
+If $\Cat{A}$ has enough injectives and satisfies AB5 (filtered colims
+of exact sequences are exact), then $\Cat{A}$ has enough injectives.
+\end{rmk}
+
 \begin{cor}
-If $\Cat{A}$ has enough injectives, then $\Cat{C}$ is localizing if
-and only if every $A \in \Cat{C}$ has a largest subobject.
+If $\Cat{A}$ has injective envelopes, then $\Cat{C}$ is 
+localizing if and only if every $A \in \Cat{C}$ has a largest 
+subobject.
 \end{cor}
 \begin{proof}
+Using (3) of Prop. \ref{prop_1_7}, it suffices to show that every
+$A \in \Cat{M}$ emits a $\Cat{C}$-mono $u: A \to L$ for $L \in 
+\Cat{L}$
 
+Fix an injective envelope $L$ of $A$; We claim that $L$ is 
+$\Cat{C}$-closed. Certainly, every $\Cat{C}$ subobject
+meets of $L$ must meet $A$ trivially (since $A \in \Cat{M}$, 
+so $L \in \Cat{M}$. Now use the fact $L$ is injective to
+show criteria (2) of Lemma \ref{lemma_1_3}.
 \end{proof}
+
+\begin{por}
+$\Cat{M}$ is closed under taking essential extensions.
+\end{por}
+\begin{proof}
+Fix $L \in M$, and fix an essential extension $L \to L'$. For any 
+subobject. Any nonzero $\Cat{C}$ subobject of $L'$ pulls back 
+nontrivially to $L$, a contradiction.
+\end{proof}
+
+\begin{cor}
+If $\Cat{A}$ has injective envelopes, is right complete, and
+well-powered, then $\Cat{C}$ is localizing if and only if $\Cat{C}$
+is closed under direct sums (equiv. $\Cat{C}$ is complete)
+\end{cor}
+
