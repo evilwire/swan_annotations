@@ -490,7 +490,8 @@ hull} (or an \emph{injective envelope}) of $M$.
 
 \begin{rmk}
 If $\Cat{A}$ has enough injectives and satisfies AB5 (filtered colims
-of exact sequences are exact), then $\Cat{A}$ has enough injectives.
+of exact sequences are exact), then $\Cat{A}$ has injectives 
+envelopes.
 \end{rmk}
 
 \begin{cor}
@@ -505,7 +506,7 @@ $A \in \Cat{M}$ emits a $\Cat{C}$-mono $u: A \to L$ for $L \in
 
 Fix an injective envelope $L$ of $A$; We claim that $L$ is 
 $\Cat{C}$-closed. Certainly, every $\Cat{C}$ subobject
-meets of $L$ must meet $A$ trivially (since $A \in \Cat{M}$, 
+meets of $L$ must meet $A$ trivially (since $A \in \Cat{M}$), 
 so $L \in \Cat{M}$. Now use the fact $L$ is injective to
 show criteria (2) of Lemma \ref{lemma_1_3}.
 \end{proof}
@@ -515,7 +516,7 @@ $\Cat{M}$ is closed under taking essential extensions.
 \end{por}
 \begin{proof}
 Fix $L \in M$, and fix an essential extension $L \to L'$. For any 
-subobject. Any nonzero $\Cat{C}$ subobject of $L'$ pulls back 
+subobject, any nonzero $\Cat{C}$ subobject of $L'$ pulls back 
 nontrivially to $L$, a contradiction.
 \end{proof}
 
@@ -527,7 +528,7 @@ A category $\Cat{A}$ is \emph{well-powered} if for each $A \in
 \begin{cor}
 If $\Cat{A}$ has injective envelopes, is right complete, and
 well-powered, then $\Cat{C}$ is localizing if and only if $\Cat{C}$
-is closed under direct sums (equiv. $\Cat{C}$ is complete)
+is closed under direct sums (equiv. $\Cat{C}$ is complete).
 \end{cor}
 \begin{proof}
 \noindent $\Leftarrow$: sum over the set of $\Cat{C}$ subobjects
@@ -536,9 +537,9 @@ also be in $\Cat{C}$, since $\Cat{C}$ is a Serre subcategory. This
 is the largest subobject.
 
 \noindent $\Rightarrow$: $C \in \Cat{C}$ if and only if $C \to 0$
-is a $\Cat{C}$-envelope if and only if $RC = 0$.
+is a $\Cat{C}$-envelope, if and only if $RC = 0$.
 
 But $R\sum_{\alpha} C_\alpha = \sum_{\alpha} RC_\alpha$ (since $R$
-is left adjoint.
+is left adjoint).
 \end{proof}
 
