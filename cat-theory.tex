@@ -257,7 +257,7 @@ Let $0 \to A \stackrel{f}{\to} A' \stackrel{g}{\to} A'' \to
 0 & \rTo  & \ker Rj  & \rTo   & RA          & \rTo{Rg} & RA''
 \end{diagram}
 \]
-Applying Snake Lemma, conclude that $\ker hu', \cok hu' \in \Cat{C}$. 
+Apply Snake Lemma, and conclude that $\ker hu', \cok hu' \in \Cat{C}$. 
 Use Lemma \ref{C_map_comp}, conclude that $h$ is a $\Cat{C}$-iso.
 Using Lemma \ref{lemma_1_3} on the sequence
 \[
@@ -311,7 +311,8 @@ L        & \rEquals &L \\
 RL       & \rTo     &L
 \end{diagram}
 \]
-and naturality follows. 
+and naturality of the above diagram follows from $L$ being 
+$\Cat{C}$-closed.
 
 \item $\Cat{A}$ is abelian, and is itself closed under
 finite $\dlim$.
@@ -423,12 +424,13 @@ $P$ along $B$:
 0 &\rTo & C        & \rTo{h}  & A    & \rTo{j}  & B       & \rTo & 0
 \end{diagram}
 \]
-That $j'$ is epi follows from $j$ epi. $C \to P$ follows from the 
-universality of pullbacks (via $C \stackrel{0}{\to} D$) and $D 
-\to B$ is injective implies that the top sequence is exact, and
-since $C, D \in \Cat{C}$ implies that $P \in \Cat{C}$; $C$ largest
-implies $P \to A$ factors through $C$, and thus, $P \to D \to B$
-is 0, and thus $D = 0$. This shows that $B \in \Cat{M}$.
+That $j'$ is epi follows from $j$ epi. The map $C \to P$ comes 
+from the universality of pullbacks (via $C \stackrel{0}{\to} D$) 
+and $D \to B$ is injective implies that the top sequence is 
+exact, and since $C, D \in \Cat{C}$ implies that $P \in \Cat{C}$; 
+$C$ largest implies $P \to A$ factors through $C$, and thus, $P 
+\to D \to B$ is 0, and thus $D = 0$. This shows that $B \in 
+\Cat{M}$.
 
 $B \in \Cat{M}$ implies (via 3) that we can construct a 
 $\Cat{C}$-mono $B \to L$ to some $L$ $\Cat{C}$-closed, and
@@ -531,10 +533,10 @@ well-powered, then $\Cat{C}$ is localizing if and only if $\Cat{C}$
 is closed under direct sums (equiv. $\Cat{C}$ is complete).
 \end{cor}
 \begin{proof}
-\noindent $\Leftarrow$: sum over the set of $\Cat{C}$ subobjects
+\noindent $\Leftarrow$: sum over the set of $\Cat{C}$-subobjects
 of $A$. This is an object of $\Cat{C}$, whose image in $A$ must
-also be in $\Cat{C}$, since $\Cat{C}$ is a Serre subcategory. This
-is the largest subobject.
+also be in $\Cat{C}$, since $\Cat{C}$ is a Serre subcategory. Show 
+that this is the largest subobject.
 
 \noindent $\Rightarrow$: $C \in \Cat{C}$ if and only if $C \to 0$
 is a $\Cat{C}$-envelope, if and only if $RC = 0$.
