@@ -288,10 +288,35 @@ We define $\hom_{\AC}(A, B)$ to be the equivalence class under
 $\sim$. Since $\Cat{A}$ is well-powered, $\hom_{\AC}(A, B)$ is a
 set.
 
-
 \begin{lem}[Goursat's Lemma]\label{lemma_2_2}
-There exists a 1-to-1 correspondence between subojects of $A \times B$ and maps
-of subojects of $A$ to quotients of $B$.
+There exists a 1-to-1 correspondence between subojects of $A 
+\times B$ and maps of subojects of $A$ to quotients of $B$.
 \end{lem}
+\begin{proof}
+\noindent Subobject to maps: Fix $F$ subobject of $A \times B$, 
+and let $S$ be the image of $F \to A$, and $K$ the kernel of $F 
+\to S$. We have
+\[
+\begin{diagram}
+0 &\rTo & K &\rTo & F           & \rTo & S & \rTo & 0 \\
+  &     &   &     & \dTo{\pi_B} \\
+  &     &   &     & B           \\
+  &     &   &     & \dTo        \\
+  &     &   &     & \cok f
+\end{diagram}
+\]
+Since $K \to F \to B$ is the map $f$, there is a map from $S \to 
+\cok f$ (here $S$ is a subobject of $A$, and $\cok f$ is a 
+quotient of $B$).
 
-
+\noindent Maps to subobject: fix $0 \to S \to A$ and $B \to Q \to 
+0$, with $f: S \to Q$, then consider the pullback diagram
+\[
+\begin{diagram}
+P    & \rTo         & S \times B \\
+\dTo &              & \dTo       \\
+S    & \rTo{(1, f)} & S \times Q
+\end{diagram}
+\]
+Check that these are inverses to each other.
+\end{proof}
