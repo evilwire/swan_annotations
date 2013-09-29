@@ -31,10 +31,61 @@ where $F$ is exact and annihilates $C$. Then $G: \Cat{D} \to
 \Cat{B}$ is exact and $GT$ is naturally isomorphic to $F$
 and any other $G'$ is naturally isomorphic to $G$.
 
+We solve the problems first for $\Cat{C}$ localizing.
+
 \vskip 10pt
-\begin{thm}
+\begin{prop}
 If $\Cat{C}$ is localizing, then $\Cat{L}$ and the reflection
 $R: \Cat{A} \to \Cat{L}$ solves Problem 2.
-\end{thm}
+\end{prop}
 \begin{proof}
+Let $F: \Cat{A} \to \Cat{B}$ be exact and annihilate $\Cat{C}$.
+Set $G = F|_{\Cat{L}}$. Certainly the following commutes:
+\[
+\begin{diagram}
+   &          & \Cat{L}     \\
+   & \ruTo{T} & \dDashto{G} \\
+ A \\
+   & \rdTo{F} \\
+   &          & B
+\end{diagram}
+\]
+We must show that $G$ is exact. For s.e.s. in $\Cat{L}$,
+\[
+0 \to L' \to L \to L'' \to 0
+\]
+we have
+\[
+0 \to L' \to L \to L'' \to C \to 0
+\]
+in $\Cat{A}$, and applying $R$, note that $C \in \Cat{C}$;
+but $\Cat{C}$ is annihilated by $F$. Therefore, $FC = 0$,
+and $G = F|_{\Cat{L}}$ is exact.
+
+Next, we show $GR$ is naturally iso to $F$. For each $A \in
+\Cat{A}$, we have a $\Cat{C}$-iso $u_A : A \to RA$, which
+induces an iso $FA \to FRA$ which is natural in $A$. As
+$FRA = GRA$, $FA \to GRA$ is a natural iso.
+
+Finally, we show that $F|_{\Cat{C}}$ is universal. Fix a
+natural iso $\nu : GR \to F$. Then $\nu|_{\Cat{L}}$ is a
+natural isomorphism from $GR|_{\Cat{L}} \to F|_{\Cat{L}}$.
+But $GR|_{\Cat{L}} = G$.
 \end{proof}
+
+\begin{rmk}
+I have yet to give a satisfactory explanation to the following 
+passage, taken directly from Swan's notes:
+
+\begin{quotation}
+It could happen that $\Cat{A}$ was very big and $\Cat{L}$ small 
+(by creating a new equivalent category with lots of objects in 
+each is isomorphism type of $\Cat{A}$ not in $\Cat{L}$). Then the 
+above construction won't work for problem 1 because $R$ will 
+identify too many objects to be able to factor $F$ as $GR$. This
+is the only difficulty. We remove it by the following construction.
+\end{quotation}
+
+This lies at the heart of differentiating Problem 2 from Problem
+1:
+\end{rmk}
