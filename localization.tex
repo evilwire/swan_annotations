@@ -115,5 +115,74 @@ $\Cat{A}$ with a localizing Serre subcategory $\Cat{C}$.
 $T$ is exact since $R$ is exact.
 
 To show that $T$ is universal, consider $F : \Cat{A} \to \Cat{B}$
-an exact functor that annihilates $\Cat{C}$
+an exact functor that annihilates $\Cat{C}$, we want $G$ such that
+$GT = F$. If such a $G$ exists, then it will be exact since $GSR$
+is naturally iso to $F$, and $GS$ is exact by Proposition 
+\ref{prop_2_0}; but $S$ is an equivalence.
+
+Define $G = F$ on objects.
+
+Next, consider $f \in \hom_{\AC}(A, B)$. This corresponds to a 
+diagram in $\Cat{A}$:
+\begin{equation}\label{2_star}
+\begin{diagram}
+A         &         & B         \\
+\dTo{u_A} &         & \dTo{u_B} \\
+RA        & \rTo{f} & RB
+\end{diagram}
+\end{equation}
+Applying $F$ to the above, we have
+\[
+\begin{diagram}
+FA         &          & FB         \\
+\dTo{Fu_A} &          & \dTo{Fu_B} \\
+FRA        & \rTo{Ff} & FRB
+\end{diagram}
+\]
+Note that $Fu_A, Fu_B$ are isos, since $u_A, u_B$ are 
+$\Cat{C}$-isos. Set $G(f) = (Tu_B)^{-1}F(f)Tu_A$. First, consider
+$u_A : A \to RA$. We want to show that 
+\[
+GTu_A = Fu_A.
+\]
+To see this, notice that $RA = RRA$ so $Ru_A = \id_{RA} = 
+R\id_{RA}$. We have the following diagram associated to
+$Tu_A$:
+\[
+\begin{diagram}
+A         &            & RA             \\
+\dTo{u_A} &            & \dTo{\id_{RA}} \\
+RA        & \rTo{Tu_A} & RRA
+\end{diagram}
+\]
+From which we derive
+\[
+\begin{diagram}
+FA         &           & FRA       \\
+\dTo{Fu_A} &           & \dTo{\id} \\
+FRA        & \rTo{\id} & FRA
+\end{diagram}
+\]
+And it is clear that $GTu_A = Fu_A$.
+
+And similarly, applying $T$ to (\ref{2_star}), we have
+\[
+\begin{diagram}
+TA         & \rTo{f}  & TB         \\
+\dTo{Tu_A} &          & \dTo{Tu_B} \\
+TRA        & \rTo{Tf} & TRB
+\end{diagram}
+\]
+
+Applying $G$ to the above, we have
+\[
+\begin{diagram}
+FA         & \rTo{Gf}  & FB         \\
+\dTo{Fu_A} &           & \dTo{Fu_B} \\
+FRA        & \rTo{GTf} & FRB
+\end{diagram}
+\]
+and since $Fu_A$ and $Fu_B$ are isomorphisms, we have $GTf = 
+Fu_BGf(Fu_A)^{-1} = Ff$. Similar argumens show that $GTf = Ff$
+for any $f \in \Cat{A}$.
 \end{proof}
