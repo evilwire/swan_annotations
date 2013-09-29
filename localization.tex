@@ -1,8 +1,8 @@
 \section{Localization}
 
-For the following, let $\Cat{A}$ be an abelian category, and
-let $\Cat{C}$ be a Serre subcategory. The following sections will
-deal with the following two questions:
+\noindent For the following, let $\Cat{A}$ be an abelian 
+category, and let $\Cat{C}$ be a Serre subcategory. The following 
+sections will deal with the following two questions:
 
 \noindent {\bf Problem 1.} Find an exact functor $T$ and an 
 abelian category $\Cat{A}/\Cat{C}$ with $T: \Cat{A} \to 
@@ -34,7 +34,7 @@ and any other $G'$ is naturally isomorphic to $G$.
 We solve the problems first for $\Cat{C}$ localizing.
 
 \vskip 10pt
-\begin{prop}
+\begin{prop} \label{prop_2_0}
 If $\Cat{C}$ is localizing, then $\Cat{L}$ and the reflection
 $R: \Cat{A} \to \Cat{L}$ solves Problem 2.
 \end{prop}
@@ -86,6 +86,34 @@ identify too many objects to be able to factor $F$ as $GR$. This
 is the only difficulty. We remove it by the following construction.
 \end{quotation}
 
-This lies at the heart of differentiating Problem 2 from Problem
-1:
+My thoughts: Consider $A$ and its $\Cat{C}$-envelope $RA$; by 
+definition, $RRA = RA$, and therefore $A$ necessarily maps to the 
+same object as $RA$ via $GR$. Conversely, $FA$ may not be 
+identified as $FRA$. Thus, necessarily, $GR \neq F$.
+
+To make the above discussion concrete, we produce the following
+$F$ as an example of the above, and also a solution to Problem 1.
 \end{rmk}
+
+Let $\AC$ be the category whose objects are objects of $\Cat{A}$
+and $\hom_{\AC}(A, B) = \hom_{\Cat{A}}(RA, RB)$. There is a 
+functor $T: \Cat{A} \to \AC$ defined by $TA = A$ and $Tf = Rf$.
+Let $S : \AC \to \Cat{L}$ be the functor given by $A \mapsto RA$
+and $Sf = f$. It is clear that $R$ is an equivalence with inverse
+$S$.
+
+It follows that $\AC$ is an abelian category that annihilates
+$\Cat{C}$. Indeed, for $A \in \Cat{A}$, $RA = 0$ if and only if
+$A \in \Cat{C}$. We also have the following:
+
+\begin{thm}
+The category $\AC$ defined as above solves problem 1 for 
+$\Cat{A}$ with a localizing Serre subcategory $\Cat{C}$.
+\end{thm}
+
+\begin{proof}
+$T$ is exact since $R$ is exact.
+
+To show that $T$ is universal, consider $F : \Cat{A} \to \Cat{B}$
+an exact functor that annihilates $\Cat{C}$
+\end{proof}
