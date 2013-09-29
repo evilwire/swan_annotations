@@ -140,7 +140,11 @@ FRA        & \rTo{Ff} & FRB
 \end{diagram}
 \]
 Note that $Fu_A, Fu_B$ are isos, since $u_A, u_B$ are 
-$\Cat{C}$-isos. Set $G(f) = (Tu_B)^{-1}F(f)Tu_A$. First, consider
+$\Cat{C}$-isos. Set 
+\[
+G(f) = (Tu_B)^{-1}F(f)Tu_A.
+\]
+First, consider
 $u_A : A \to RA$. We want to show that 
 \[
 GTu_A = Fu_A.
@@ -182,7 +186,35 @@ FA         & \rTo{Gf}  & FB         \\
 FRA        & \rTo{GTf} & FRB
 \end{diagram}
 \]
-and since $Fu_A$ and $Fu_B$ are isomorphisms, we have $GTf = 
-Fu_BGf(Fu_A)^{-1} = Ff$. Similar argumens show that $GTf = Ff$
+and since $Fu_A$ and $Fu_B$ are isomorphisms, we have 
+\[
+GTf = Fu_BGf(Fu_A)^{-1} = Ff.
+\]
+Similar argumens show that $GTf = Ff$
 for any $f \in \Cat{A}$.
 \end{proof}
+
+\begin{definition}
+Fix $\Cat{A}$ an abelian category, and let $\Cat{C}$ be a Serre
+subcategory. Suppose $\AC$ is any category with an exact functor 
+$T: \Cat{A} \to \AC$. 
+
+We say that $\AC$ is a \emph{weak localization of $\Cat{A}$ by 
+$\Cat{C}$} exact functors annihilating $\Cat{C}$ (i.e. $T$ solves 
+Problem 2).
+
+We say $\AC$ is a \emph{(strong) localization of $\Cat{A}$ by 
+$\Cat{C}$} if $T$ factors any $F: \Cat{A} \to \Cat{B}$ 
+annihilating $\Cat{C}$ (i.e. $T$ solves Problem 1).
+\end{definition}
+
+The bulk of this section will be devoted to proving the following
+theorem:
+
+\begin{thm}
+If $\Cat{A}$ is well-powered (cf. \ref{def_well_powered}) then
+for any Serre subcategory $\Cat{C}$, there exists a strong 
+localization $\AC$ of $\Cat{A}$ by $\Cat{C}$.
+
+
+\end{thm}
