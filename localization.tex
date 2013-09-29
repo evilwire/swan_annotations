@@ -320,3 +320,62 @@ S    & \rTo{(1, f)} & S \times Q
 \]
 Check that these are inverses to each other.
 \end{proof}
+
+\begin{definition}
+A \emph{relation between $A$ and $B$} is a subobject of $A \times 
+B$. Relations are usually denoted $\rel{R}, \rel{S}$, etc.
+\end{definition}
+
+It is possible to ``compose'' relations. Say $\rel{R}$ is a 
+relation between $A$ and $B$, and $\rel{S}$ is a relation
+between $B$ and $C$, then define $\rel{S} \comp \rel{R}$ to be
+the composition $P \to A \times B \times C \to A \times C$
+where $P$ is the pullback of
+\[
+\begin{diagram}
+P                & \rTo & \rel{R} \times C   \\
+\dTo             &      & \dTo               \\
+A \times \rel{S} & \rTo & A \times B \times C
+\end{diagram}
+\]
+It is easy to see (via universal properties or by appealing to the 
+Embedding Theorem) that
+\[
+\rel{T} \comp (\rel{S} \comp \rel{R}) = (\rel{T} \comp \rel{S}) 
+\comp \rel{R}.
+\]
+Similarly, we can define $\rel{R}^{-1}$ to be the composition of 
+$\rel{R} \to A \times B \stackrel{\simeq}{\to} B \times A$.
+
+\begin{definition}
+For $\rel{R}$ and $\rel{S}$ relations between $A$ and $B$, we call
+$\rel{R} \comp \rel{S}$ \emph{the composition of $\rel{R}$ and 
+$\rel{S}$}. We call $\rel{R}$ \emph{the inverse of $\rel{R}$}.
+\end{definition}
+
+\begin{definition}
+We say $\rel{R}'$ is a subrelation of $\rel{R}$ (written 
+$\rel{R}' \leq \rel{R}'$)if $\rel{R}$ is a subobject of $\rel{R}'$
+\end{definition}
+
+The following are clear consequences of the above (albeit somewhat
+tedious to verify with the universal properties, or, if forfeiting
+categorical purity is acceptable, reasonably straightforward via 
+Embedding Theorem):
+
+\begin{prop}
+For $\rel{R}, \rel{S}$ and $\rel{T}$, and with $\rel{R}' \leq 
+\rel{R}$,
+\begin{enumerate}
+\item $(\rel{S} \circ \rel{R})^{-1} = \rel{R}^{-1} \circ 
+\rel{S}^{-1}$
+
+\item $\rel{S} \comp \rel{R}' \leq \rel{S} \comp \rel{R}$
+
+\item $\rel{R}' \comp \rel{T} \leq \rel{R} \comp \rel{T}$
+
+\item $\rel{R}'^{-1} \leq \rel{R}^{-1}$
+\end{enumerate}
+\end{prop}
+
+
