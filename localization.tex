@@ -342,12 +342,6 @@ P                & \rTo & \rel{R} \times C   \\
 A \times \rel{S} & \rTo & A \times B \times C
 \end{diagram}
 \]
-It is easy to see (via universal properties or by appealing to the 
-Embedding Theorem) that
-\[
-\rel{T} \comp (\rel{S} \comp \rel{R}) = (\rel{T} \comp \rel{S}) 
-\comp \rel{R}.
-\]
 Similarly, we can define $\rel{R}^{-1}$ to be the composition of 
 $\rel{R} \to A \times B \stackrel{\simeq}{\to} B \times A$.
 
@@ -369,16 +363,19 @@ Embedding Theorem):
 
 \begin{prop}\label{prop_2_47}
 For $\rel{R}, \rel{S}$ and $\rel{T}$, and with $\rel{R}' \leq 
-\rel{R}$,
+\rel{R}$, we have the following (whenever composition is defined)
 \begin{enumerate}
 \item $(\rel{S} \circ \rel{R})^{-1} = \rel{R}^{-1} \circ 
-\rel{S}^{-1}$
+\rel{S}^{-1}$.
 
 \item $\rel{S} \comp \rel{R}' \leq \rel{S} \comp \rel{R}$
 
 \item $\rel{R}' \comp \rel{T} \leq \rel{R} \comp \rel{T}$
 
 \item $\rel{R}'^{-1} \leq \rel{R}^{-1}$
+
+\item $\rel{T} \comp (\rel{S} \comp \rel{R}) = (\rel{T} \comp 
+\rel{S}) \comp \rel{R}$.
 \end{enumerate}
 \end{prop}
 
@@ -412,7 +409,7 @@ The \emph{domain of $\rel{R}$} is $\rel{R}^{-1}(B)$, and the
 
 \begin{definition}
 We write the diagonal relation $\Delta_A \to A \times A$ as 
-$\rel{Id}_A$ (and sometimes just $\rel{Id}$ if $A$ is understood). 
+$\rel{Id}_A$ (or simply $\rel{Id}$ if $A$ is understood). 
 For $\rel{R}$ a relation between $A$ and $B$, we write 
 $\rel{Id}_\rel{R}$ as the relation $\rel{R}^{-1} \comp \rel{R}$ 
 as relation between $A$ and $A$.
@@ -500,12 +497,12 @@ A$ is a $\Cat{C}$-epi.
 We have the following consequences, clear from Lemma 
 \ref{lemma_2_3} and Proposition \ref{prop_2_47}
 
-\begin{cor}
+\begin{cor}\label{cor_3_2}
 If $\rel{R}$ and $\rel{S}$ are pre-$\Cat{C}$ maps, then so is
 $\rel{S} \comp \rel{R}$.
 \end{cor}
 
-\begin{lem}
+\begin{lem}\label{lemma_2_5}
 If $\rel{R}$ is $\Cat{C}$-equivalent to $\rel{R}'$ and $\rel{S}$ is 
 $\Cat{C}$-equivalent to $\rel{S}'$, then $\rel{S} \comp \rel{R}$ is
 $\Cat{C}$-equivalent to $\rel{S}' \comp \rel{R}'$.
@@ -513,4 +510,21 @@ $\Cat{C}$-equivalent to $\rel{S}' \comp \rel{R}'$.
 \begin{proof}
 Follows directly from Proposition \ref{prop_2_47} (3) and induction
 on length of the ``zip-zap''.
+\end{proof}
+
+\begin{prop}
+For $\Cat{A}$ an abelian category, and $\Cat{C}$ a Serre 
+subcategory, the category $\AC$ whose objects are those of 
+$\Cat{A}$ and morphisms
+\[
+\hom_{\AC}(A, B) = \{\; \Gamma\; |\; \Gamma\;
+\textrm{pre-}\Cat{C}\textrm{ map from }A\textrm{ to }B \;\}
+\] 
+forms a category.
+\end{prop}
+\begin{proof}
+By Corollary \ref{cor_3_2} and Lemma \ref{lemma_2_5}, composition 
+is well-defined. Associativity follows from Proposition 
+\ref{prop_2_47} (5). The relation $\rel{Id}_A$ (which is a 
+$\Cat{C}$-iso) gives a two-sided identity on $\hom_{\AC}(A, A)$.
 \end{proof}
