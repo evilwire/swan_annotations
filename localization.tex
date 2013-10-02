@@ -528,3 +528,75 @@ is well-defined. Associativity follows from Proposition
 \ref{prop_2_47} (5). The relation $\rel{Id}_A$ (which is a 
 $\Cat{C}$-iso) gives a two-sided identity on $\hom_{\AC}(A, A)$.
 \end{proof}
+
+Set $T(A) = A$ and $T(f) = [\Gamma_f]$ where $\Gamma_f$ is the
+pre-$\AC$ map defined by the graph of $f$. We check that $T$ has 
+the desired properties. We proceed by proving the following three 
+propositions:
+
+\begin{prop}
+Let $F: \Cat{A} \to \Cat{B}$ be an exact functor of abelian 
+categories such that $F$ annihilates $\Cat{C}$. Then there exists
+a functor $G$ such that $F = GT$.
+\end{prop}
+\begin{proof}
+Set $G(A) = F(A)$. Then $F = GT$ on objects.
+
+Next, let $\rel{R} \to A \times B$ be a pre-$\AC$-map. Since $F$ 
+is exact, $F(\rel{R})$ is a subobject of $F(A \times B) = FA 
+\times FB$. As $\rel{R} \to A$ is a $\Cat{C}$-iso and $F$ 
+annihilates $\Cat{C}$, $F\rel{R}$ is isomorphic to $FA$. Taking 
+$g$ to be the composition $FA \to F\rel{R} \to FA \times FB \to 
+FB$, define $G(\rel{R}) = g$.
+
+We check that $G$ is well-defined: for $\rel{R}' \leq \rel{R}$ 
+with $\rel{R}' \to \rel{R}$ a $\Cat{C}$-iso, we have a triangle 
+of $\Cat{C}$-isos:
+\[
+\begin{diagram}
+\rel{R}' \\
+\dTo & \rdTo \\
+\rel{R}    & \rTo & A
+\end{diagram}
+\]
+Applying $F$, we have
+\[
+\begin{diagram}
+F\rel{R}' \\
+\dTo      & \rdTo(4,2) \\
+F\rel{R}  & \rTo & FA \times FB & \rTo & FA
+\end{diagram}
+\]
+\end{proof}
+But $F\rel{R} \simeq F\rel{R}'$ and correspond to the same 
+subobject of $FA \times FB$. Therefore, $F\rel{R}$ and 
+$F\rel{R}'$ give rise to the same map $g$.
+
+Finally, we check that $G$ behaves well with respect to 
+composition: $G(\rel{S} \comp \rel{S}) = G\rel{S}G\rel{R}$.
+Fix pre-$\Cat{C}$ maps $\rel{R} \to A \times B$ and $\rel{S} \to 
+B \times C$. Then $\rel{S} \comp \rel{R}$ is the image of $P$
+in $A \times C$ of the diagram:
+\[
+\begin{diagram}
+P                & \rTo & A \times \rel{S}    \\
+\dTo             &      & \dTo                \\
+\rel{R} \times C & \rTo & A \times B \times C \\
+                 &      & \dTo                \\ 
+                 &      & A \times C
+\end{diagram}
+\]
+Applying $F$, we see that
+\[
+\begin{diagram}
+FP                  & \rTo & FA \times F\rel{S}     \\
+\dTo                &      & \dTo                   \\
+F(\rel{R} \times C) & \rTo & F(A \times B \times C) \\
+                    &      & \dTo                   \\ 
+                    &      & F(A \times C).
+\end{diagram}
+\]
+Let $\rel{T}$ be the image of $P$ in $A \times C$. By
+Corollary \ref{cor_3_2}, $\rel{T}$ is also a pre-$\Cat{C}$ map
+between $A$ to $C$, and $F\rel{T} \to FC$ is given by
+$G\rel{S}G\rel{R}$.
