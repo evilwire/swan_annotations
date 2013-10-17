@@ -602,6 +602,13 @@ between $A$ to $C$, and $F\rel{T} \to FC$ is given by
 $G\rel{S}G\rel{R}$.
 \end{proof}
 
+\begin{prop}\label{prop_2_6}
+Let $G$ and $G'$ be functors from $\AC$ to $\Cat{B}$ where 
+$\Cat{B}$ is any category. If $GT = G'T$ then $G = G'$.
+\end{prop}
+
+The proof depends on the following lemmas:
+
 \begin{lem}\label{lemma_2_8}
 Suppose $f: A \to B$ in $\Cat{A}$ is a $\Cat{C}$-iso,
 then $T(f)$ is an iso in $\AC$.
@@ -635,6 +642,7 @@ TA &           & \rTo{h} &           & TB \\
 \]
 commutes.
 \end{lem}
+
 \begin{proof}
 Fix $\rel{R}$ representing $h$, and let $f$ and $g$ be the 
 projections of $\rel{R}$ (regarded as an object of $\Cat{A}$). It 
@@ -644,11 +652,7 @@ directly that $\rel{R}\comp\Gamma_f \geq \Gamma_g$. It follows
 that $hT(f) = T(g)$.
 \end{proof}
 
-\begin{prop}
-Let $G$ and $G'$ be functors from $\AC$ to $\Cat{B}$ where 
-$\Cat{B}$ is any category. If $GT = G'T$ then $G = G'$.
-\end{prop}
-\begin{proof}
+\begin{proof}[Proof of Prop. \ref{prop_2_6}]
 First, $G$ and $G'$ agree on objects.
 
 For a map $h: TA \to TB$, apply Lemma \ref{lemma_2_9}, and then
@@ -681,7 +685,8 @@ GTB       & \rTo{\eta_B} & G'TB
 where $\eta_A$ and $\eta_B$ are iso.
 
 Fix $h: A \to B$, since $TA = A$, we have can define $\nu$
-where $\nu_A: GA = GTA \eta_A G'TA = GA$. It follows that
+where $\nu_A: GA = GTA \stackrel{\eta_A}{\to} G'TA = GA$. It 
+follows that
 $\nu_A$ is an iso, and 
 \[
 \begin{diagram}
