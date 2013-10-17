@@ -662,8 +662,6 @@ TA &           & \rTo{h} &           & TB \\
 \]
 Use the fact that $GT = G'T$ and $GT(f) = G'T(f)$ is an iso (Lemma
 \ref{lemma_2_8}) to conclude that $G(h) = G'(h)$ as desired.
-
-
 \end{proof}
 
 \begin{prop}
@@ -671,3 +669,26 @@ Let $G$ and $G'$ be functors from $\AC$ to $\Cat{B}$ for any
 category $\Cat{B}$ with $GT$ naturally isomorphic to $G'T$,
 then $G$ is naturally isomoprhic to $G'$.
 \end{prop}
+\begin{proof}
+Let $\eta: GT \to G'T$. We have
+\[
+\begin{diagram}
+GTA       & \rTo{\eta_A} & G'TA       \\
+\dTo{GTf} &              & \dTo{G'Tf} \\
+GTB       & \rTo{\eta_B} & G'TB
+\end{diagram}
+\]
+where $\eta_A$ and $\eta_B$ are iso.
+
+Fix $h: A \to B$, since $TA = A$, we have can define $\nu$
+where $\nu_A: GA = GTA \eta_A G'TA = GA$. It follows that
+$\nu_A$ is an iso, and 
+\[
+\begin{diagram}
+GA       & \rTo{\nu_A} & G'A       \\
+\dTo{Gh} &             & \dTo{G'h} \\
+GB       & \rTo{\nu_B} & G'B.
+\end{diagram}
+\]
+commutes; $\nu$ is the desired natural iso.
+\end{proof}
