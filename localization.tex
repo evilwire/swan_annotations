@@ -244,7 +244,7 @@ identified in the limit if
 B & \rTo & B'      & \rTo & B''      & \rTo & 0.
 \end{diagram}
 \]
-When assuming $\Cat{C}$ is small, this approach is correct (see 
+When assuming $\Cat{C}$ is small, this approach is correct (cf 
 Goursat's Lemma -- \ref{lemma_2_2} below), though the morphisms 
 defined are difficult to work with. As Swan correctly points out,
 the difficulty here is in defining composition and proving 
@@ -255,7 +255,7 @@ Noting that any $f: A \to B$ can be factored as a $A
 \stackrel{(1, f)}{\to} A \times B \stackrel{\pi_B}{\to} B$, we adopt
 a different strategy by considering the following:
 
-\begin{definition}
+\begin{definition}\label{def_pre_c_map}
 Let $A, B \in \Cat{A}$. Then a \emph{pre-$\Cat{C}$ map} from $A$ to
 $B$ is a subobject $\Gamma$ of $A \times B$ such that the composition
 $\Gamma \to A \times B \to A$ is a $\Cat{C}$-iso.
@@ -353,7 +353,8 @@ $\rel{S}$}. We call $\rel{R}^{-1}$ \emph{the inverse of $\rel{R}$}.
 
 \begin{definition}
 We say $\rel{R}'$ is a subrelation of $\rel{R}$ (written 
-$\rel{R}' \leq \rel{R}'$)if $\rel{R}$ is a subobject of $\rel{R}'$
+$\rel{R}' \leq \rel{R}'$) if $\rel{R}$ is a subobject of 
+$\rel{R}'$.
 \end{definition}
 
 The following are clear consequences of the above (albeit somewhat
@@ -606,12 +607,12 @@ Suppose $f: A \to B$ in $\Cat{A}$ is a $\Cat{C}$-iso,
 then $T(f)$ is an iso in $\AC$.
 \end{lem}
 \begin{proof}
-Since $f$ is $\Cat{C}$-iso, $\Gamma_f$ is a pre-$\AC$ map
-since $\Gamma_f \to A$ is an iso, and $\Gamma_f \to B$ is a
-$\Cat{C}$-iso (Lemma \ref{lemma_2_3}). Consequently,
-$\Gamma_f^{-1}$ is also a pre-$\Cat{C}$ map, and defines
-$h \in \hom_{\AC}(A,B)$. Since $hT(f)$ is represented by
-$\Gamma_f^{-1}\Gamma_f$, conclude that $h$ is the desired
+Since $f$ is $\Cat{C}$-iso, $\Gamma_f$ is a pre-$\AC$ map since 
+$\Gamma_f \to A$ is an iso, and $\Gamma_f \to B$ is a 
+$\Cat{C}$-iso (cf. \ref{lemma_2_3}). Consequently, 
+$\Gamma_f^{-1}$ is also a pre-$\Cat{C}$ map, and defines $h \in 
+\hom_{\AC}(A,B)$. Since $hT(f)$ is represented by 
+$\Gamma_f^{-1}\Gamma_f$, conclude that $h$ is the desired 
 inverse; similarly for $T(f)h$.
 \end{proof}
 
@@ -635,7 +636,12 @@ TA &           & \rTo{h} &           & TB \\
 commutes.
 \end{lem}
 \begin{proof}
-
+Fix $\rel{R}$ representing $h$, and let $f$ and $g$ be the 
+projections of $\rel{R}$ (regarded as an object of $\Cat{A}$). It 
+follows that $f$ is a $\Cat{C}$-iso (cf. \ref{def_pre_c_map}). To 
+continue, either appeal to the Embedding Theorems, or show 
+directly that $\rel{R}\comp\Gamma_f \geq \Gamma_g$. It follows 
+that $hT(f) = T(g)$.
 \end{proof}
 
 \begin{prop}
