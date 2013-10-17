@@ -648,6 +648,23 @@ that $hT(f) = T(g)$.
 Let $G$ and $G'$ be functors from $\AC$ to $\Cat{B}$ where 
 $\Cat{B}$ is any category. If $GT = G'T$ then $G = G'$.
 \end{prop}
+\begin{proof}
+First, $G$ and $G'$ agree on objects.
+
+For a map $h: TA \to TB$, apply Lemma \ref{lemma_2_9}, and then
+apply $G$ and $G'$ to
+\[
+\begin{diagram}
+TA &           & \rTo{h} &           & TB \\
+   & \luTo{Tf} &         & \ruTo{Tg} \\
+   &           & TA'
+\end{diagram}
+\]
+Use the fact that $GT = G'T$ and $GT(f) = G'T(f)$ is an iso (Lemma
+\ref{lemma_2_8}) to conclude that $G(h) = G'(h)$ as desired.
+
+
+\end{proof}
 
 \begin{prop}
 Let $G$ and $G'$ be functors from $\AC$ to $\Cat{B}$ for any 
