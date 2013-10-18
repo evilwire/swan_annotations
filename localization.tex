@@ -844,3 +844,28 @@ which is precisely $A/\rel{R}^{-1}(Y) \times_A \rel{R}'^{-1}(Y)$
 is in $\Cat{C}$. Now use \ref{lemma_55_star}(2), and the fact that
 $\Cat{C}$ is closed under quotients.
 \end{proof}
+
+In particular
+
+\begin{cor}
+The category $\AC$ is additive.
+\end{cor}
+\begin{proof}
+The only thing to check here is that for $f', f'' \in 
+\hom_{\Cat{A}}(A,B)$, then $T(f' + f'')$ is represented by $T(f')
++ T(f'')$ (this is follows straightforwardly from the definition
+of $T(f') + T(f'')$) and additivity behaves well with respect to
+composition.
+
+For the latter, verify (either elementarily or via universal 
+properties) that
+\[
+(\rel{R} + \rel{R}')\comp \rel{S} \leq
+   \rel{R} \comp \rel{S} + \rel{R}'' \comp \rel{S}
+\]
+and
+\[
+\rel{T} \comp (\rel{R} + \rel{R}') \geq 
+   \rel{T} \comp \rel{R} + \rel{T} \comp \rel{R'}.
+\]
+\end{proof}
