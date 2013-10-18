@@ -718,9 +718,29 @@ P                & \rTo      & \rel{R}' \times B   \\
 where $r_1$, projects $\rel{R}$ to the first and second factor of 
 $A \times B \times B$, and $r_2$ projects $\rel{R}'$ to the first 
 and third factor of $A \times B \times B$; further, the map from 
-$A \times B \times B$ to $A \times B$ is given by $id \times 
+$A \times B \times B$ to $A \times B$ is given by $\id \times 
 (\pi_1 + \pi_2)$ where $\pi_1$ and $\pi_2$ are the first and second
 projection of $B \times B \to B$.
+\end{definition}
+
+\begin{definition} 
+We write $0$ for $\Gamma_0$ as a pre-$\AC$ map.
+
+For $\rel{R}$ a pre-$\AC$ map from $A$ to $B$, we define the 
+\emph{additive inverse of $\rel{R}$}, written as $-\rel{R}$ to be 
+the image of the pullback $P$
+\[
+\begin{diagram}
+P          & \rTo      & \rel{R} \times B    \\
+\dTo       &           & \dTo{r_2}           \\
+0 \times B & \rTo{r_1} & A \times B \times B \\
+           &           &                     & \rdTo \\
+           &           &                     &       & A \times B
+\end{diagram}
+\]
+in $A \times B$, where $r_1$ and $r_2$ are defined as above, and
+$A \times B \times B \to A \times B$ is given by $\id \times (\pi_1 -
+\pi_2)$.
 \end{definition}
 
 \begin{rmk}
@@ -735,3 +755,31 @@ $\rel{R}'$ as concrete objects, in which case
 We will adopt this perspective primarily because it reduces much 
 of the subsequent verifications to elements.
 \end{rmk}
+
+We have the following immediate results:
+
+\begin{prop}
+For $\rel{R}, \rel{R}', \rel{R}''$ pre-$\AC$ maps from $A$ to $B$
+\begin{enumerate}
+\item \emph{Commutative} $\rel{R} + \rel{R}' = \rel{R}' + \rel{R}$.
+
+\item \emph{Associativity} $\rel{R} + (\rel{R}' + \rel{R}'') =
+(\rel{R} + \rel{R}') + \rel{R}''$.
+
+\item \emph{Existance of Identity} $\rel{R} + 0 = \rel{R}$.
+
+\item \emph{Existence of Inverse} $\rel{R} + (-\rel{R}) = 0$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item is clear.
+
+\item use the fact that a pullback of a pullback the pullback,
+whose image must agree with the image of its factors.
+
+\item Use embedding theorems.
+
+\item ditto.
+\end{enumerate}
+\end{proof}
