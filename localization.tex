@@ -791,13 +791,13 @@ In light of the above, to show additivity of pre-$\AC$ maps, it
 suffice to show that the sum of two pre-$\AC$ maps is a pre-$\AC$
 map.
 
-\begin{lem}
+\begin{lem}\label{lemma_55_star}
 For $\rel{R}$ and $\rel{R}'$ pre-$\AC$ maps between $A$ and $B$,
 \begin{enumerate}
-\item $\rel{R} + \rel{R}'')(X) \leq (\rel{R} + \rel{R})(X)$ (cf.
+\item ($\rel{R} + \rel{R}'')(X) \leq (\rel{R} + \rel{R})(X)$ (cf.
 \ref{subrelation}).
 
-\item $(\rel{R} + \rel{R}'')^{-1}(Y) \geq \rel{R}^{-1}(Y) \times_B
+\item $(\rel{R} + \rel{R}'')^{-1}(Y) \geq \rel{R}^{-1}(Y) \times_A
 \rel{R'}^{-1}(Y)$ (cf. \ref{relation_inverse}, \ref{relation_range}).
 \end{enumerate}
 \end{lem}
@@ -809,4 +809,38 @@ Use embedding theorems, and work with elements:
 \item Observe that if $b'$ and $b''$ are elements of $Y$, then
 $b' + b'' \in Y$. The rest follows straightforwardly.
 \end{enumerate}
+\end{proof}
+
+Now we prove:
+
+\begin{prop}
+If $\rel{R}$ and $\rel{R}'$ are pre-$\AC$ maps from $A$ to $B$,
+then $\rel{R} + \rel{R}'$ is a pre-$\AC$ map.
+\end{prop}
+\begin{proof}
+Using Lemma \ref{lemma_2_3}, it suffice to show that
+\begin{enumerate}
+\item for $X$ a subobject of $A$, if $X \in \Cat{C}$ then 
+$(\rel{R} + \rel{R}')(X) \in \Cat{C}$.
+
+\item for $Y$ a subobject of $B$ with $B/Y \in \Cat{C}$. Then
+$A/(\rel{R} + \rel{R}')^{-1}(Y) \in \Cat{C}$
+\end{enumerate}
+
+For (1), use Lemma \ref{lemma_55_star} (2): $(\rel{R} + 
+\rel{R}')(X) \leq \rel{R}(X) + \rel{R}'(X)$ and $\rel{R}(X)$ and 
+$\rel{R}'(X)$ are both members of $\Cat{C}$. So is their product,
+and so is $\rel{R}(X) + \rel{R}(X')$ as $\Cat{C}$ is closed under
+images. The result follows from the fact that $\Cat{C}$ is closed
+under subobjects.
+
+(2) is a dual of the arguments in (1): we have $A/\rel{R}^{-1}(Y)$ 
+and $A/\rel{R}'^{-1}(Y)$ are objects of $C$. Hence, their product 
+is also an object of $\Cat{C}$, whence the image of $A$ in
+\[
+A \to A/\rel{R}^{-1}(Y) \times A/\rel{R}'^{-1}(Y) 
+\]
+which is precisely $A/\rel{R}^{-1}(Y) \times_A \rel{R}'^{-1}(Y)$ 
+is in $\Cat{C}$. Now use \ref{lemma_55_star}(2), and the fact that
+$\Cat{C}$ is closed under quotients.
 \end{proof}
