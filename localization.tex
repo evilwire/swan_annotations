@@ -351,8 +351,8 @@ $\rel{R} \comp \rel{S}$ \emph{the composition of $\rel{R}$ and
 $\rel{S}$}. We call $\rel{R}^{-1}$ \emph{the inverse of $\rel{R}$}.
 \end{definition}
 
-\begin{definition}
-We say $\rel{R}'$ is a subrelation of $\rel{R}$ (written 
+\begin{definition}\label{subrelation}
+We say \emph{$\rel{R}'$ is a subrelation of $\rel{R}$} (written 
 $\rel{R}' \leq \rel{R}'$) if $\rel{R}$ is a subobject of 
 $\rel{R}'$.
 \end{definition}
@@ -380,8 +380,10 @@ For $\rel{R}, \rel{S}$ and $\rel{T}$, and with $\rel{R}' \leq
 \end{enumerate}
 \end{prop}
 
-For $X \in A$, and relation $\rel{R}$ we define $\rel{R}(X)$ to 
-be the image of the pullback $P$ in $B$ of the following:
+\begin{definition}\label{relation_range}
+For $X \in A$, and relation $\rel{R}$ we define \emph{the image
+of $\rel{R}$}, written as $\rel{R}(X)$ to be the image of the 
+pullback $P$ in $B$ of the following:
 \[
 \begin{diagram}
 P & \rTo & X \times B \\
@@ -391,6 +393,7 @@ P & \rTo & X \times B \\
     &  &  &   & B
 \end{diagram}
 \]
+\end{definition}
 
 It is clear that
 \begin{prop}
@@ -418,8 +421,8 @@ as relation between $A$ and $A$.
 
 \begin{prop}
 For relation $\rel{R}$ from $A$ to $B$ with domain $D$, we have 
-$\rel{Id}_\rel{R} = \Delta_D$, where $\Delta_D$ is (image of) the 
-diagonal embedding of $D$ in $A$.
+$\rel{Id}_\rel{R} = \Delta_D$, where $\Delta_D$ is (the image of) 
+the diagonal embedding of $D$ in $A$.
 \end{prop}
 
 The following identifies the pre-$\AC$ maps in the set of relations
@@ -758,7 +761,7 @@ of the subsequent verifications to elements.
 
 We have the following immediate results:
 
-\begin{prop}
+\begin{lem}
 For $\rel{R}, \rel{R}', \rel{R}''$ pre-$\AC$ maps from $A$ to $B$
 \begin{enumerate}
 \item \emph{Commutative} $\rel{R} + \rel{R}' = \rel{R}' + \rel{R}$.
@@ -770,7 +773,7 @@ For $\rel{R}, \rel{R}', \rel{R}''$ pre-$\AC$ maps from $A$ to $B$
 
 \item \emph{Existence of Inverse} $\rel{R} + (-\rel{R}) = 0$
 \end{enumerate}
-\end{prop}
+\end{lem}
 \begin{proof}
 \begin{enumerate}
 \item is clear.
@@ -782,4 +785,21 @@ whose image must agree with the image of its factors.
 
 \item ditto.
 \end{enumerate}
+\end{proof}
+
+In light of the above, to show additivity of pre-$\AC$ maps, it 
+suffice to show that the sum of two pre-$\AC$ maps is a pre-$\AC$
+map.
+
+\begin{lem}
+For $\rel{R}$ and $\rel{R}'$ pre-$\AC$ maps between $A$ and $B$,
+\begin{enumerate}
+\item $\rel{R} + \rel{R}'')(X) \leq (\rel{R} + \rel{R})(X)$ (cf.
+\ref{subrelation}).
+
+\item $(\rel{R} + \rel{R}'')^{-1}(Y) \geq \rel{R}^{-1}(Y) \times_B
+\rel{R'}^{-1}(Y)$ (cf. \ref{relation_inverse}, \ref{relation_range}).
+\end{enumerate}
+\end{lem}
+\begin{proof}
 \end{proof}
