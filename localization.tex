@@ -697,3 +697,28 @@ GB       & \rTo{\nu_B} & G'B.
 \]
 commutes; $\nu$ is the desired natural iso.
 \end{proof}
+
+In the following, we establish that there is an additive structure 
+on the morphisms of $\AC$. We begin with the following definition
+
+\begin{definition}
+For $\rel{R}$ and $\rel{R}'$ pre-$\AC$ maps from $A$ to $B$, we
+define \emph{the sum of $\rel{R}$ and $\rel{R}'$}, written as 
+$\rel{R} + \rel{R}'$ to be the image of the pullback $P$ in
+$A \times B$ of the following diagram:
+\[
+\begin{diagram}
+P                & \rTo      & \rel{R}' \times B   \\
+\dTo             &           & \dTo{r_2}           \\
+\rel{R} \times B & \rTo{r_1} & A \times B \times B \\
+                 &           &                     & \rdTo \\
+                 &           &                     &       & A \times B
+\end{diagram}
+\]
+where $r_1$, projects $\rel{R}$ to the first and second factor of 
+$A \times B \times B$, and $r_2$ projects $\rel{R}'$ to the first 
+and third factor of $A \times B \times B$; further, the map from 
+$A \times B \times B$ to $A \times B$ is given by $id \times 
+(\pi_1 + \pi_2)$ where $\pi_1$ and $\pi_2$ are the first and second
+projection of $B \times B \to B$.
+\end{definition}
