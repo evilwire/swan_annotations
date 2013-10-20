@@ -956,6 +956,62 @@ that $\AC$ has kernels, and $T$ preserves kernels by showing that
 the situation is self-dual. That is, if $\AC$ has kernels, then
 it has cokernels, and so on.
 
+At this point, it may be useful to introduce the following 
+notion.
+
+\begin{definition}
+Let $\Cat{W}$ be a subcategory of $\Cat{A}$. We say that a 
+collection of maps $\Cat{W}$ of $\Cat{A}$ is \emph{right 
+multiplcative} if for every $A, A', A'' \in \Cat{A}$ such that
+\[
+\begin{diagram}
+A &          &    &          & A' \\
+  & \rdTo{f} &    & \ldTo{g} \\
+  &          & A''
+\end{diagram}
+\]
+and $g: A' \to A'' \in \Cat{W}$, then there exists a commutative
+diagram
+\[
+\begin{diagram}
+  &           & P  \\
+  & \ldTo{g'} &    & \rdTo{f'} \\
+A &           &    &           & A' \\
+  & \rdTo{f}  &    & \ldTo{g}  \\
+  &           & A''
+\end{diagram}
+\]
+such that $g': P \to A \in \Cat{W}$. 
+
+Similarly, we say that 
+$\Cat{W}$ is \emph{left multiplicative} if
+\[
+\begin{diagram}
+A &          &    &          & A' \\
+  & \rdTo{f} &    & \ldTo{g} \\
+  &          & A''
+\end{diagram}
+\]
+and $f: A \to A'' \in \Cat{W}$, then there exists a commutative 
+diagram
+\[
+\begin{diagram}
+  &           & P  \\
+  & \ldTo{g'} &    & \rdTo{f'} \\
+A &           &    &           & A' \\
+  & \rdTo{f}  &    & \ldTo{g}  \\
+  &           & A''
+\end{diagram}
+\]
+such that $f': P \to A' \in \Cat{W}$.
+
+In this case, $\Cat{W}$ is called \emph{multiplicative} if 
+$\Cat{W}$ is both left and right multiplicative.
+\end{definition}
+
+There is a dual notion of \emph{left/right co-multiplicative},
+which can be straightforwardly inferred from the above.
+
 The following lemma will be useful:
 
 \begin{lem}
@@ -988,6 +1044,7 @@ elementarily, but appealing only to universal properties of the
 objects in question, maybe more difficult than is enlightening.
 Therefore, we proceed by assuming that $\Cat{A}$ is concrete, 
 which is possible in light of the embedding theorems.
+
 
 To finish, given $h: TA \to TB$, we have (by Lemma 
 \ref{lemma_2_9}):
