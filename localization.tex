@@ -1014,10 +1014,10 @@ which can be straightforwardly inferred from the above. We
 show that the class of $\Cat{C}$-isos actually forms a multiplicative
 (and comultiplicative) system.
 
-\begin{lemma}\label{pullbacks_pushforwards_C_iso}
+\begin{lem}\label{pullbacks_pushforwards_C_iso}
 For a Serre subcategory $\Cat{C}$ of $\Cat{A}$, pull-backs and 
 pushforwards of $\Cat{C}$-isos are $\Cat{C}$-isos.
-\end{lemma}
+\end{lem}
 \begin{proof}
 It suffice to consider the case of pushforwards, since the arguments
 for pullbacks can be obtained by ``dualizing'' these arguments.
@@ -1104,6 +1104,30 @@ $\Cat{C}$-iso.
 From Lemma \ref{lemma_2_9} and Lemma \ref{lemma_2_9_dual}, we
 see that
 
-\begin{corollary}
-The class of $\Cat{C}$-isos form a multiplicative system.
-\end{corollary}
+\begin{cor}
+The class of $\Cat{C}$-isos form a multiplicative and 
+comultiplicative system.
+\end{cor}
+
+It will be clear shortly why this implies that having kernels
+implies having cokernels, and coimage being isomorphic to images.
+
+For now, consider
+
+\begin{definition}
+Let $f: A \to B$ be a map in any abelian category. Then $i: K \to 
+A$ is a \emph{pseudo-kernel} if for any map $j: D \to A$ with $f 
+\circ j = 0$ there exists a map (not necessarily unique) $g: D 
+\to K$ such that the following diagram commutes:
+\[
+\begin{diagram}
+K & \rTo{i}      & A       & \rTo{f} & B \\
+  & \luDashto{g} & \uTo{j} \\
+  &              & D
+\end{diagram}
+\]
+\end{definition}
+\begin{rmk}
+This notion is weaker than the usual notion of kernels because
+the map $g$ is not assumed to be unique.
+\end{rmk}
