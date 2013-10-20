@@ -1019,6 +1019,26 @@ For a Serre subcategory $\Cat{C}$ of $\Cat{A}$, pull-backs and
 pushforwards of $\Cat{C}$-isos are $\Cat{C}$-isos.
 \end{lemma}
 \begin{proof}
+It suffice to consider the case of pushforwards, since the arguments
+for pullbacks can be obtained by ``dualizing'' these arguments.
+
+For pushforwards, the statement is not difficult to prove 
+elementarily; appealing only to universal properties of the 
+objects in question, proceeding may be more difficult than is 
+enlightening. Therefore, we proceed by assuming that $\Cat{A}$ is 
+concrete, which is possible in light of the embedding theorems.
+
+Assume $f: A \to B$ is a $\Cat{C}$-iso, and fix $g: A \to C$ any
+morphism, and take pushforward, and extend to diagram
+\[
+\begin{diagram}
+0 & \rTo & K       &A       & \rTo{f}  & B        & \rTo & C       & \rTo 0
+  &      & \dTo{h} &\dTo{g} &          & \dTo{g'} &      & \dTo{j} \\
+0 &      & K'      &C       & \rTo{f'} & P        & \rTo & C'      & \rTo 0
+\end{diagram}
+\]
+We show that $h$ is a surjection (hence $K'$ is a quotient)
+and $j$ is an injection.
 \end{proof}
 
 The following lemma will be useful:
@@ -1047,15 +1067,7 @@ This is the dual of Lemma \ref{lemma_2_9}.
 \end{rmk}
 
 \begin{proof}
-The proof relies on the fact that pushforward (and pull-back) of 
-$\Cat{C}$-isos are $\Cat{C}$-isos. This is not difficult 
-elementarily, but appealing only to universal properties of the
-objects in question, maybe more difficult than is enlightening.
-Therefore, we proceed by assuming that $\Cat{A}$ is concrete, 
-which is possible in light of the embedding theorems.
-
-
-To finish, given $h: TA \to TB$, we have (by Lemma 
+Given $h: TA \to TB$, we have (by Lemma 
 \ref{lemma_2_9}):
 \[
 \begin{diagram}
