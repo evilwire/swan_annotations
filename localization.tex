@@ -989,16 +989,16 @@ objects in question, maybe more difficult than is enlightening.
 Therefore, we proceed by assuming that $\Cat{A}$ is concrete, 
 which is possible in light of the embedding theorems.
 
-To finish,
+To finish, given $h: TA \to TB$, we have (by Lemma 
+\ref{lemma_2_9}):
 \[
 \begin{diagram}
-A &           &    &           & B \\
-  & \rdTo{f}  &    & \ldTo{g}  \\
-  &           & P
+  &           & A' \\
+  & \ldTo{g'} &    & \rdTo{f'} \\
+A &           &    &           & B
 \end{diagram}
 \]
-
-Suppose $g': A' \to A$ is a $\Cat{C}$-iso, and consider
+for some $A' \in \Cat{A}$. Complete to a push-forward diagram:
 \[
 \begin{diagram}
   &           & A' \\
@@ -1008,4 +1008,5 @@ A &           &    &           & B \\
   &           & P
 \end{diagram}
 \]
+By the above, $g: B \to P$ is a $\Cat{C}$-iso, and we are done.
 \end{proof}
