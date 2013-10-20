@@ -1028,20 +1028,32 @@ objects in question, proceeding may be more difficult than is
 enlightening. Therefore, we proceed by assuming that $\Cat{A}$ is 
 concrete, which is possible in light of the embedding theorems.
 
-Assume $f: A \to B$ is a $\Cat{C}$-iso, and fix $g: A \to C$ any
+Assume $f: A \to B$ is a $\Cat{C}$-iso, and fix $g: A \to A'$ any
 morphism, and take pushforward, and extend to diagram
 \[
 \begin{diagram}
 0 & \rTo & K       &A       & \rTo{f}  & B        & \rTo & C       & \rTo 0
   &      & \dTo{h} &\dTo{g} &          & \dTo{g'} &      & \dTo{j} \\
-0 &      & K'      &C       & \rTo{f'} & P        & \rTo & C'      & \rTo 0
+0 &      & K'      &A'      & \rTo{f'} & P        & \rTo & C'      & \rTo 0
 \end{diagram}
 \]
-We show that $h$ is a surjection (hence $K'$ is a quotient)
-and $j$ is an injection.
+We show that $h$ is a surjection (hence $K'$ is a quotient) and 
+$j$ is an split surjection injection (and $C'$ is a subobject of 
+$C$).
+
+For $h$, $K' = c \in A'$ such that $(c,0) = (0, 0)$. That is,
+$c = g(a)$ for some $a$ such that $f(a) = 0$. It follows that
+$K$ surjects onto $K'$ via $h$.
+
+For $j$, via the 0 map $A' \to C$, we can define a map $j': P \to C$
+such that $j \circ j' = P \to C$. Composing $j$ with $A' \to P$, we
+obtain a map from $C' \to C$ that splits $j$.
+
+Since $C, K \in \Cat{C}$ which is closed under quotients and 
+subobjects, $C', K' \in \Cat{C}$, and $f'$ is a $\Cat{C}$-iso.
 \end{proof}
 
-The following lemma will be useful:
+We also have the following:
 
 \begin{lem}
 For $h: TA \to TB$ there exists
