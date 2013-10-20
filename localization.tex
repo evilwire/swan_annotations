@@ -1014,7 +1014,7 @@ which can be straightforwardly inferred from the above. We
 show that the class of $\Cat{C}$-isos actually forms a multiplicative
 (and comultiplicative) system.
 
-\begin{lemma}
+\begin{lemma}\label{pullbacks_pushforwards_C_iso}
 For a Serre subcategory $\Cat{C}$ of $\Cat{A}$, pull-backs and 
 pushforwards of $\Cat{C}$-isos are $\Cat{C}$-isos.
 \end{lemma}
@@ -1055,7 +1055,7 @@ subobjects, $C', K' \in \Cat{C}$, and $f'$ is a $\Cat{C}$-iso.
 
 We also have the following:
 
-\begin{lem}
+\begin{lem}\label{lemma_2_9_dual}
 For $h: TA \to TB$ there exists
 \[
 \begin{diagram}
@@ -1079,8 +1079,7 @@ This is the dual of Lemma \ref{lemma_2_9}.
 \end{rmk}
 
 \begin{proof}
-Given $h: TA \to TB$, we have (by Lemma 
-\ref{lemma_2_9}):
+Given $h: TA \to TB$, we have (by Lemma \ref{lemma_2_9}):
 \[
 \begin{diagram}
   &           & A' \\
@@ -1098,5 +1097,13 @@ A &           &    &           & B \\
   &           & P
 \end{diagram}
 \]
-By the above, $g: B \to P$ is a $\Cat{C}$-iso, and we are done.
+By Lemma \ref{pullbacks_pushforwards_C_iso}, $g: B \to P$ is a 
+$\Cat{C}$-iso.
 \end{proof}
+
+From Lemma \ref{lemma_2_9} and Lemma \ref{lemma_2_9_dual}, we
+see that
+
+\begin{corollary}
+The class of $\Cat{C}$-isos form a multiplicative system.
+\end{corollary}
