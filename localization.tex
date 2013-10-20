@@ -967,7 +967,7 @@ A &          &    &          & B \\
   &          & A'
 \end{diagram}
 \]
-in $\Cat{A}$ with $f$ a $\Cat{C}$-iso such that
+in $\Cat{A}$ with $g$ a $\Cat{C}$-iso such that
 \[
 \begin{diagram}
 TA &           & \rTo{h} &           & TB \\
@@ -982,5 +982,30 @@ This is the dual of Lemma \ref{lemma_2_9}.
 \end{rmk}
 
 \begin{proof}
+The proof relies on the fact that pushforward (and pull-back) of 
+$\Cat{C}$-isos are $\Cat{C}$-isos. This is not difficult 
+elementarily, but appealing only to universal properties of the
+objects in question, maybe more difficult than is enlightening.
+Therefore, we proceed by assuming that $\Cat{A}$ is concrete, 
+which is possible in light of the embedding theorems.
 
+To finish,
+\[
+\begin{diagram}
+A &           &    &           & B \\
+  & \rdTo{f}  &    & \ldTo{g}  \\
+  &           & P
+\end{diagram}
+\]
+
+Suppose $g': A' \to A$ is a $\Cat{C}$-iso, and consider
+\[
+\begin{diagram}
+  &           & A' \\
+  & \ldTo{g'} &    & \rdTo{f'} \\
+A &           &    &           & B \\
+  & \rdTo{f}  &    & \ldTo{g}  \\
+  &           & P
+\end{diagram}
+\]
 \end{proof}
