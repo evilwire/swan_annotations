@@ -1132,7 +1132,7 @@ This notion is weaker than the usual notion of kernels because
 the map $g$ is not assumed to be unique.
 \end{rmk}
 
-\begin{lem}
+\begin{lem}\label{T_preserves_psdoker}
 Let $T$ be the functor from $A$ to $\AC$. Then $T$ preserves 
 pseudo kernels.
 \end{lem}
@@ -1146,9 +1146,9 @@ TK & \rTo{Ti} & TA      & \rTo{Tf} & TB \\
    &          & C
 \end{diagram}
 \]
-where $i: K \to A$ is a mono, and $(Tf)j = 0$ in $\AC$. We proceed 
-by showing that $C$ is isomorphic to $TD$ for some $D$ where $D$ 
-emits a map to $A$ whose composition with $f$ is 0.
+where for some map $i: K \to A$, and $(Tf)j = 0$ in $\AC$. We 
+proceed by showing that $C$ is isomorphic to $TD$ for some $D$ 
+where $D$ emits a map to $A$ whose composition with $f$ is 0.
 
 Now, since $T$ is essentially surjective, we may assume that $C = 
 TC$. Applying Lemma \ref{lemma_2_9}, we have the following diagram 
@@ -1187,9 +1187,22 @@ Hence, $j$ factors through $TK$, as desired.
 
 To continue, we show:
 
-\begin{lem}
-Let $T$ be as above ($T: \Cat{A} \to \AC$). Then $T$ preserves 
+\begin{lem}\label{T_preserves_monos}
+Let $T: \Cat{A} \to \AC$ be as above. Then $T$ preserves 
 monos.
 \end{lem}
 \begin{proof}
+Suppose $0 \to A \to B$ is a mono, then $T0 = 0$ is a pseudo 
+kernel, whence $TA \to TB$ is a mono.
+\end{proof}
+
+\begin{prop}\label{T_preserves_ker_cok}
+Let $T: \Cat{A} \to \AC$ be as above. Then $T$ preserves kernels
+and cokernels.
+\end{prop}
+\begin{proof}
+Since kernel of $A \to B$ is a monomorphic pseudo kernel, the
+first statement follows from Lemmas \ref{T_preserves_psdoker}
+and \ref{T_preserves_monos}. For cokernels, notice the ``dual''
+of the arguments also hold by Lemma \ref{lemma_2_9_dual}.
 \end{proof}
