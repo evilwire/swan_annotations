@@ -516,7 +516,7 @@ Follows directly from Proposition \ref{prop_2_47} (3) and induction
 on length of the ``zig-zag''.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{AC_is_a_cat}
 For $\Cat{A}$ an abelian category, and $\Cat{C}$ a Serre 
 subcategory, the category $\AC$ whose objects are those of 
 $\Cat{A}$ and morphisms
@@ -671,7 +671,7 @@ Use the fact that $GT = G'T$ and $GT(f) = G'T(f)$ is an iso (Lemma
 \ref{lemma_2_8}) to conclude that $G(h) = G'(h)$ as desired.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop_2_7}
 Let $G$ and $G'$ be functors from $\AC$ to $\Cat{B}$ for any 
 category $\Cat{B}$ with $GT$ naturally isomorphic to $G'T$,
 then $G$ is naturally isomoprhic to $G'$.
@@ -704,7 +704,7 @@ commutes; $\nu$ is the desired natural iso.
 In the following, we establish that there is an additive structure 
 on the morphisms of $\AC$. We begin with the following definition
 
-\begin{definition}
+\begin{definition}\label{adding_relations}
 For $\rel{R}$ and $\rel{R}'$ pre-$\AC$ maps from $A$ to $B$, we
 define \emph{the sum of $\rel{R}$ and $\rel{R}'$}, written as 
 $\rel{R} + \rel{R}'$ to be the image of the pullback $P$ in
@@ -847,7 +847,7 @@ $\Cat{C}$ is closed under quotients.
 
 In particular
 
-\begin{cor}
+\begin{cor}\label{AC_is_additive}
 The category $\AC$ is additive.
 \end{cor}
 \begin{proof}
@@ -870,7 +870,7 @@ and
 \]
 \end{proof}
 
-\begin{cor}
+\begin{cor}\label{AC_has_sums_and_prods}
 The category $\AC$ has all finite products and sums; $\AC$ also 
 has a zero object.
 \end{cor}
@@ -1207,7 +1207,7 @@ first statement follows from Lemmas \ref{T_preserves_psdoker} and
 arguments also hold by Lemma \ref{lemma_2_9_dual}.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{AC_has_ker_and_cok}
 The category $\AC$ has kernels and cokernels.
 \end{prop}
 \begin{proof}
@@ -1230,9 +1230,9 @@ Similarly by Prop. \ref{T_preserves_ker_cok} and Lemma
 \ref{lemma_2_9_dual}, $\AC$ has cokernels.
 \end{proof}
 
-\begin{lem}
+\begin{cor}\label{AC_coim_equals_im}
 For any $h: TA \to TB$, $\coim h = \im h$.
-\end{lem}
+\end{cor}
 \begin{proof}
 Use Lemma \ref{lemma_2_9} to reduce to the case where $h = Tg$ for
 some $g$. In this case, it suffice to show that $T\coim g = \coim 
@@ -1247,7 +1247,7 @@ T(A/\ker g) = TA/T\ker g = \coim Tg$.
 To complete the proof of Theorem \ref{theorem_2_1}, we need only 
 the following:
 
-\begin{prop}\label{T_is_universal}
+\begin{prop}\label{G_is_exact}
 Let $T: \Cat{A} \to \AC$ be as above, and $F: \Cat{A} \to 
 \Cat{B}$ an exact functor such that $F$ annihilates $\Cat{C}$, 
 then there exists an exact functor $G: \AC \to \Cat{B}$ such
@@ -1262,4 +1262,33 @@ Via Lemma \ref{lemma_2_9}, we may reduce to the case where $h =
 Tg$, whence $G(\ker h) = GT(\ker g)$ and $G(\cok h) = GT(\cok g)$
 by Prop. \ref{T_preserves_ker_cok}. It follows that $G$ is exact
 if and only if $GT$ is.
+\end{proof}
+
+At this point, we have proved all points of Theorem 
+\ref{theorem_2_1}. We summarize the arguments in the following:
+
+\begin{proof}[Proof of Theorem \ref{theorem_2_1}]
+We constructed $\AC$ where the objects are those of $\Cat{A}$
+and morphisms are equivalence classes of pre-$\AC$ maps (cf. Def. 
+\ref{def_pre_c_map}) given by a zig-zag relation of $\Cat{C}$-isos
+(cf. \ref{C_equivalent}).
+
+By defining additions on relations (cf. Def. 
+\ref{adding_relations}), we show that $\AC$ is additive (Cor. 
+\ref{AC_is_additive}). We show that $\AC$ has sums and products
+in Cor \ref{AC_has_sums_and_prods}. Finally, we show that $\AC$
+is an abelian category by showing that $\AC$ has kernels and
+cokernels (Prop. \ref{AC_has_ker_and_cok}), and in $\AC$, coimages
+are isomorphic to images (Cor. \ref{AC_coim_equals_im}).
+
+In Prop. \ref{AC_is_a_cat}, we show that $\AC$ defined as above
+forms a category. In Prop. \ref{T_factors_F}, we proved that the 
+canonical functor $T: \Cat{A} \to \AC$ factors any exact $F: 
+\Cat{A} \to \Cat{B}$, and two equal factorization are equal (Prop.
+\ref{prop_2_6}) and and any naturally isomorphic factorization are
+naturally isomorphic (Prop. \ref{prop_2_7}). 
+
+We complete the proof of Theorem \ref{theorem_2_1} by showing 
+that, should $GT = F$, then $G$ must in fact be exact (Prop.
+\ref{G_is_exact}).
 \end{proof}
