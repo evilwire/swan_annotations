@@ -1137,5 +1137,50 @@ Let $T$ be the functor from $A$ to $\AC$. Then $T$ preserves
 pseudo kernels.
 \end{lem}
 \begin{proof}
+Let $K$ be a pseudo-kernel of $A \stackrel{f}{\to} B$. We want to 
+show that $TK$ is the pseudo kernel of $Tf$. Consider the diagram
+\[
+\begin{diagram}
+TK & \rTo{Ti} & TA      & \rTo{Tf} & TB \\
+   &          & \uTo{j} \\
+   &          & C
+\end{diagram}
+\]
+where $i: K \to A$ is a mono, and $(Tf)j = 0$ in $\AC$. We proceed 
+by showing that $C$ is isomorphic to $TD$ for some $D$ where $D$ 
+emits a map to $A$ whose composition with $f$ is 0.
 
+Now, since $T$ is essentially surjective, we may assume that $C = 
+TC$. Applying Lemma \ref{lemma_2_9}, we have the following diagram 
+in $\Cat{A}$ for some $D \in \Cat{A}$:
+\[
+\begin{diagram}
+C &          &    &          & A \\
+  & \luTo{l} &    & \ruTo{g} \\
+  &          & D
+\end{diagram}
+\]
+such that $l$ is a $\Cat{C}$-iso, and
+\[
+\begin{diagram}
+TC &           & \rTo{j} &           & TA \\
+   & \luTo{Tl} &         & \ruTo{Tg} \\
+   &           & TD
+\end{diagram}
+\]
+By Lemma \ref{lemma_2_8}, $Tl$ is an iso. Thus, we may replace
+$C$ by $D$ and assume that $j = Tg$, for some $g: C \to A$. Then 
+$T(fg) = 0$, and hence by Lemma \ref{lemma_2_10}, we have that 
+$\im fg \in \Cat{C}$. Therefore, $\ker fg \to C$ is a 
+$\Cat{C}$-iso. We have
+\[
+\begin{diagram}
+TK      & \rTo  & TA       & \rTo{Tf} & TB \\
+        & \ruTo & \uTo{Tg} \\
+\ker fg & \rTo  & C = TC
+\end{diagram}
+\]
+By replacing $C$ by $\ker fg$, we may now assume that $fg = 0$,
+whence there exists some map $k: C \to K$ such that $ik = g$. 
+Hence, $j$ factors through $TK$, as desired.
 \end{proof}
