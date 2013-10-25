@@ -1292,3 +1292,41 @@ We complete the proof of Theorem \ref{theorem_2_1} by showing
 that, should $GT = F$, then $G$ must in fact be exact (Prop.
 \ref{G_is_exact}).
 \end{proof}
+
+\begin{cor}\label{cor_2_12}
+If 
+\[
+0 \to TA' \to TA \to TA'' \to 0
+\] 
+is an exact sequence in $\AC$, then there is an exact sequence 
+\[
+0 \to B' \to B \to B'' \to 0,
+\] 
+in $\Cat{A}$ such that the following diagram commutes with all 
+vertical maps isos in $\AC$:
+\[
+\begin{diagram}
+0 & \rTo & TB'  & \rTo & TB   & \rTo & TB'' & \rTo & 0 \\
+  &      & \dTo &      & \dTo &      & \dTo \\
+0 & \rTo & TA'  & \rTo & TA   & \rTo & TA'' & \rTo & 0
+\end{diagram}
+\]
+\end{cor}
+\begin{proof}
+Use Lemma \ref{lemma_2_9} on $TA \to TA''$:
+\[
+\begin{diagram}
+A &       &    &       & A'' \\
+  & \luTo &    & \ruTo \\
+  &       & B
+\end{diagram}
+\]
+Let $B''$ be the image of $B \to A''$ and $B'$ be the kernel.
+Use Prop. \ref{T_preserves_ker_cok}.
+\end{proof}
+
+\begin{thm}\label{theorem_2_13}
+Let $\Cat{A}$ be an abelian category, and $\Cat{C}$ a Serre 
+subcategory such that $\AC$ exists. Then $\Cat{C}$ is localizing
+if and only if $T: A \to \AC$ has a right adjoint.
+\end{thm}
