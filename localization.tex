@@ -1201,8 +1201,31 @@ Let $T: \Cat{A} \to \AC$ be as above. Then $T$ preserves kernels
 and cokernels.
 \end{prop}
 \begin{proof}
-Since kernel of $A \to B$ is a monomorphic pseudo kernel, the
-first statement follows from Lemmas \ref{T_preserves_psdoker}
-and \ref{T_preserves_monos}. For cokernels, notice the ``dual''
-of the arguments also hold by Lemma \ref{lemma_2_9_dual}.
+Since kernel of $A \to B$ is a monomorphic pseudo kernel, the 
+first statement follows from Lemmas \ref{T_preserves_psdoker} and 
+\ref{T_preserves_monos}. For cokernels, notice the ``dual'' of the 
+arguments also hold by Lemma \ref{lemma_2_9_dual}.
+\end{proof}
+
+\begin{prop}
+The category $\AC$ has kernels and cokernels.
+\end{prop}
+\begin{proof}
+For a given $h: TA \to TB$, by Lemma \ref{lemma_2_9}, there exists
+a $\Cat{C}$-iso $f: A' \to A$ and $g: A' \to B$ in $\Cat{A}$ such 
+that 
+\[
+\begin{diagram}
+TA &           & \rTo{h} &           & TB \\
+   & \luTo{Tf} &         & \ruTo{Tg} \\
+   &           & TA'
+\end{diagram}
+\]
+commutes in $\AC$. By Lemma \ref{lemma_2_8}, $Tf$ is an iso. Thus
+$h$ has a kernel if and only if $Tg$ has a kernel. But $Tg$ has a 
+kernel (established in Prop. \ref{T_preserves_ker_cok} that 
+$\ker{Tg} = T\ker{g}$). Therefore, $h$ has a kernel.
+
+Similarly by Prop. \ref{T_preserves_ker_cok} and Lemma 
+\ref{lemma_2_9_dual}, $\AC$ has cokernels.
 \end{proof}
