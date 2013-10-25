@@ -538,7 +538,7 @@ pre-$\AC$ map defined by the graph of $f$. We check that $T$ has
 the desired properties. We proceed by proving the following three 
 propositions:
 
-\begin{prop}
+\begin{prop}\label{T_factors_F}
 Let $F: \Cat{A} \to \Cat{B}$ be an exact functor of abelian 
 categories such that $F$ annihilates $\Cat{C}$. Then there exists
 a functor $G$ such that $F = GT$.
@@ -1235,13 +1235,31 @@ For any $h: TA \to TB$, $\coim h = \im h$.
 \end{lem}
 \begin{proof}
 Use Lemma \ref{lemma_2_9} to reduce to the case where $h = Tg$ for
-some $g$. In this case, it suffice to show that $T\coim g = \coim Tg$
-and $T\im g = \im Tg$.
+some $g$. In this case, it suffice to show that $T\coim g = \coim 
+Tg$ and $T\im g = \im Tg$.
 
 The $T \im g = \im Tg$ is clear. 
 
-By Prop. \ref{T_preserves_ker_cok}, it follows that $T\coim g = T(A/\ker g)
-= TA/T\ker g = \coim Tg$.
+By Prop. \ref{T_preserves_ker_cok}, it follows that $T\coim g = 
+T(A/\ker g) = TA/T\ker g = \coim Tg$.
 \end{proof}
 
-To complete the proof of Theorem \ref{theorem_2_1}, we need only
+To complete the proof of Theorem \ref{theorem_2_1}, we need only 
+the following:
+
+\begin{prop}\label{T_is_universal}
+Let $T: \Cat{A} \to \AC$ be as above, and $F: \Cat{A} \to 
+\Cat{B}$ an exact functor such that $F$ annihilates $\Cat{C}$, 
+then there exists an exact functor $G: \AC \to \Cat{B}$ such
+that $F = GT$.
+\end{prop}
+\begin{proof}
+The existence of $G$ is proved in Prop. \ref{T_factors_F}. What
+remains is to show that $G$ is exact. In this case, fix $h : A
+\to B$, we want to show that $G$ preserves $\ker h$ and $\cok h$.
+
+Via Lemma \ref{lemma_2_9}, we may reduce to the case where $h =
+Tg$, whence $G(\ker h) = GT(\ker g)$ and $G(\cok h) = GT(\cok g)$
+by Prop. \ref{T_preserves_ker_cok}. It follows that $G$ is exact
+if and only if $GT$ is.
+\end{proof}
