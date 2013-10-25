@@ -214,7 +214,7 @@ annihilating $\Cat{C}$ (i.e. $T$ solves Problem 1).
 The bulk of this section will be devoted to proving the following
 theorem:
 
-\begin{thm}[Serre]
+\begin{thm}[Serre]\label{theorem_2_1}
 If $\Cat{A}$ is well-powered (cf. \ref{def_well_powered}) then
 for any Serre subcategory $\Cat{C}$, there exists a strong 
 localization $\AC$ of $\Cat{A}$ by $\Cat{C}$.
@@ -1229,3 +1229,19 @@ $\ker{Tg} = T\ker{g}$). Therefore, $h$ has a kernel.
 Similarly by Prop. \ref{T_preserves_ker_cok} and Lemma 
 \ref{lemma_2_9_dual}, $\AC$ has cokernels.
 \end{proof}
+
+\begin{lem}
+For any $h: TA \to TB$, $\coim h = \im h$.
+\end{lem}
+\begin{proof}
+Use Lemma \ref{lemma_2_9} to reduce to the case where $h = Tg$ for
+some $g$. In this case, it suffice to show that $T\coim g = \coim Tg$
+and $T\im g = \im Tg$.
+
+The $T \im g = \im Tg$ is clear. 
+
+By Prop. \ref{T_preserves_ker_cok}, it follows that $T\coim g = T(A/\ker g)
+= TA/T\ker g = \coim Tg$.
+\end{proof}
+
+To complete the proof of Theorem \ref{theorem_2_1}, we need only
